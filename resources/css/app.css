@@ -1,0 +1,70 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-feature-settings: "ss01" on, "cv01" on;
+}
+
+/* Visible keyboard focus everywhere, regardless of Tailwind's default */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #D8A13B;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Respect users who've asked for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Fallback state for the counters before JS ticks them up */
+.counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Scroll-reveal: elements fade + rise into place as they enter the viewport.
+   JS toggles .is-visible; without JS the content still shows (see below). */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Safety net: if JS fails to load, content must not stay invisible */
+.no-js [data-reveal] {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Subtle topographic dot texture used behind the hero */
+.bg-topo {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+/* Sticky header gains a soft shadow only once the page has scrolled */
+header.is-scrolled {
+    box-shadow: 0 4px 20px -8px rgba(18, 35, 64, 0.25);
+}
