@@ -6,24 +6,13 @@ body {
     font-feature-settings:
         "ss01" on,
         "cv01" on;
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(38, 76, 62, 0.10),
-            transparent 26%
-        ),
-        radial-gradient(
-            circle at top right,
-            rgba(192, 131, 38, 0.10),
-            transparent 22%
-        ),
-        linear-gradient(180deg, #f7f2e6 0%, #f2ede0 45%, #f5f0e4 100%);
-    color: #3a352c;
+    background: #f7f8fa;
+    color: #2f353c;
 }
 
 ::selection {
-    background: rgba(192, 131, 38, 0.28);
-    color: #1e2a20;
+    background: rgba(179, 133, 42, 0.25);
+    color: #182d43;
 }
 
 main {
@@ -39,9 +28,9 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #c08326;
+    outline: 2px solid #b3852a;
     outline-offset: 2px;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 /* Respect users who've asked for reduced motion */
@@ -58,21 +47,15 @@ textarea:focus-visible {
 
 /* Base display improvement */
 .section-shell {
-    background: rgba(255, 253, 249, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(38, 76, 62, 0.1);
-    box-shadow: 0 18px 45px -32px rgba(30, 42, 32, 0.28);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(24, 45, 67, 0.1);
+    box-shadow: 0 12px 28px -22px rgba(24, 45, 67, 0.25);
 }
 
 .soft-card {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 253, 249, 0.94),
-        rgba(238, 241, 233, 0.88)
-    );
-    border: 1px solid rgba(38, 76, 62, 0.1);
-    box-shadow: 0 24px 55px -32px rgba(30, 42, 32, 0.32);
+    background: #ffffff;
+    border: 1px solid rgba(24, 45, 67, 0.1);
+    box-shadow: 0 16px 34px -26px rgba(24, 45, 67, 0.3);
 }
 
 .counter {
@@ -129,8 +112,8 @@ textarea:focus-visible {
 }
 
 header.is-scrolled {
-    box-shadow: 0 18px 40px -24px rgba(24, 32, 26, 0.3);
-    border-color: rgba(38, 76, 62, 0.16);
+    box-shadow: 0 14px 32px -22px rgba(12, 23, 32, 0.28);
+    border-color: rgba(24, 45, 67, 0.14);
 }
 
 .terrace-divider {
@@ -140,13 +123,13 @@ header.is-scrolled {
         linear-gradient(
                 115deg,
                 transparent 49%,
-                var(--terrace-color, #e2ddc9) 49%
+                var(--terrace-color, #dde1e5) 49%
             )
             0 0/40px 28px repeat-x,
         linear-gradient(
                 65deg,
                 transparent 49%,
-                var(--terrace-color, #e2ddc9) 49%
+                var(--terrace-color, #dde1e5) 49%
             )
             0 0/40px 28px repeat-x;
 }

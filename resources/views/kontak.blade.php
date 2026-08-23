@@ -4,7 +4,6 @@
 
 <section class="relative overflow-hidden pt-32 lg:pt-36 pb-12 lg:pb-16 border-b border-emerald-100/80">
     <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
-    <div class="absolute right-8 top-14 h-52 w-52 rounded-full bg-amber-200/50 blur-3xl"></div>
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
         <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-3">Kami Siap Membantu</p>
         <h1 class="font-display text-slate-800 text-3xl lg:text-5xl font-bold">Kontak Kami</h1>
@@ -112,7 +111,7 @@
                 <textarea name="pesan" rows="5" required
                           class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-200">{{ old('pesan') }}</textarea>
             </div>
-            <button type="submit" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-full transition-colors shadow-lg shadow-emerald-200/70">
+            <button type="submit" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-md transition-colors shadow-sm">
                 Kirim Pesan
             </button>
         </form>

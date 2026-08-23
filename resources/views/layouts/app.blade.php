@@ -23,7 +23,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,38 +31,38 @@
             theme: {
                 extend: {
                     colors: {
-                        /* Palet "Punggung Perbukitan" — mengganti skala bawaan Tailwind
-                           supaya seluruh halaman ikut berubah tanpa perlu menulis ulang tiap kelas. */
+                        /* Palet "Portal Resmi" — navy institusional + aksen emas tipis,
+                           mengganti skala bawaan Tailwind supaya seluruh halaman ikut berubah. */
                         emerald: {
-                            50: '#eef4f0', 100: '#d9e6dd', 200: '#b3cec0', 300: '#87b09d',
-                            400: '#5c917a', 500: '#3e7660', 600: '#2f5f4c', 700: '#264c3e',
-                            800: '#1f3d32', 900: '#183028', 950: '#101f1a',
+                            50: '#eef2f7', 100: '#d7e0ec', 200: '#b0c1d9', 300: '#84a0c2',
+                            400: '#5a7ea8', 500: '#3c6087', 600: '#2a4a6b', 700: '#1f3a56',
+                            800: '#182d43', 900: '#132434', 950: '#0c1720',
                         },
                         slate: {
-                            50: '#f7f5f0', 100: '#efeade', 200: '#ded5c2', 300: '#bcb09a',
-                            400: '#8e8370', 500: '#6c6353', 600: '#524b3f', 700: '#3f3a31',
-                            800: '#2c2822', 900: '#1d1a16', 950: '#131110',
+                            50: '#f8f9fa', 100: '#eef0f2', 200: '#dde1e5', 300: '#c1c7cd',
+                            400: '#9aa3ac', 500: '#717b86', 600: '#565f69', 700: '#434b54',
+                            800: '#2f353c', 900: '#1e2227', 950: '#131619',
                         },
                         amber: {
-                            50: '#fdf6e7', 100: '#f9e8c2', 200: '#f1d089', 300: '#e6b657',
-                            400: '#d99e37', 500: '#c08326', 600: '#9c6a1f', 700: '#7a5219',
-                            800: '#583b13', 900: '#3c290d',
+                            50: '#fdf8ec', 100: '#f8ecc9', 200: '#eeda93', 300: '#dfbf5c',
+                            400: '#cda23a', 500: '#b3852a', 600: '#8f6820', 700: '#70511a',
+                            800: '#523c14', 900: '#38290e',
                         },
-                        ink: { DEFAULT: '#1e2a20', light: '#48594b', dark: '#121a14' },
-                        gold: { DEFAULT: '#c08326', dark: '#7a5219', light: '#f1d089' },
-                        sawah: { DEFAULT: '#3e7660', dark: '#264c3e', light: '#b3cec0' },
-                        bata: { DEFAULT: '#8a4a34', dark: '#63341f', light: '#c98a6c' },
-                        paper: { DEFAULT: '#f5f0e4', alt: '#fffdf9' },
-                        inktext: '#3a352c',
-                        mist: '#eef1e9',
+                        ink: { DEFAULT: '#182d43', light: '#3c6087', dark: '#0c1720' },
+                        gold: { DEFAULT: '#b3852a', dark: '#70511a', light: '#eeda93' },
+                        sawah: { DEFAULT: '#3c6087', dark: '#1f3a56', light: '#b0c1d9' },
+                        bata: { DEFAULT: '#8a2e2e', dark: '#5c1f1f', light: '#c98c8c' },
+                        paper: { DEFAULT: '#f7f8fa', alt: '#ffffff' },
+                        inktext: '#2f353c',
+                        mist: '#eef2f7',
                     },
                     fontFamily: {
-                        display: ['"Fraunces"', 'serif'],
-                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Libre Franklin"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif'],
                         mono: ['"IBM Plex Mono"', 'monospace'],
                     },
                     boxShadow: {
-                        soft: '0 22px 60px -30px rgba(38, 76, 62, 0.4)',
+                        soft: '0 22px 60px -30px rgba(24, 45, 67, 0.35)',
                     }
                 }
             }

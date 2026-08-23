@@ -2,61 +2,55 @@
 
 @section('content')
 
-<section class="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20">
-    <div class="absolute inset-0 text-sawah/10 bg-kontur pointer-events-none"></div>
-    <div class="absolute right-0 top-16 h-72 w-72 rounded-full bg-gold/15 blur-3xl"></div>
-    <div class="absolute left-0 bottom-8 h-80 w-80 rounded-full bg-sawah/15 blur-3xl"></div>
+<section class="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20 border-b border-slate-200">
+    <div class="absolute inset-0 text-sawah/[0.06] bg-kontur pointer-events-none"></div>
 
     <div class="relative max-w-7xl mx-auto px-5 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             <div class="lg:col-span-7" data-reveal style="transition-delay: 80ms">
-                <div class="inline-flex items-center gap-2 rounded-lg border border-sawah/25 bg-paper-alt/80 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink elevation-tag">
+                <div class="inline-flex items-center gap-2 rounded-md border border-sawah/25 bg-paper-alt px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink elevation-tag">
                     <span class="h-2 w-2 rounded-full bg-gold"></span>
                     {{ $desa['kecamatan'] }}, {{ $desa['kabupaten'] }} &middot; 911 MDPL
                 </div>
-                <h1 class="mt-6 font-display text-ink text-[2.7rem] sm:text-5xl lg:text-[4.6rem] font-semibold leading-[0.98] tracking-[-0.02em] mb-6">
+                <h1 class="mt-6 font-display text-ink text-[2.4rem] sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
                     Membangun<br>
-                    <span class="text-sawah-dark italic">{{ $desa['nama_desa'] }}</span><br>
-                    dari punggung<br>
-                    perbukitan.
+                    <span class="text-sawah-dark">{{ $desa['nama_desa'] }}</span><br>
+                    dari punggung perbukitan.
                 </h1>
                 <p class="max-w-xl text-base lg:text-lg leading-relaxed text-inktext/75 mb-8">
                     {{ $desa['tagline'] }}
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 mb-8">
-                    <a href="{{ route('profil') }}" class="inline-flex items-center bg-ink hover:bg-sawah-dark text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-ink/20 transition-all duration-200">
+                    <a href="{{ route('profil') }}" class="inline-flex items-center bg-ink hover:bg-sawah-dark text-white font-semibold px-6 py-3.5 rounded-md shadow-sm transition-colors duration-200">
                         Jelajahi Profil
                     </a>
-                    <a href="{{ route('potensi') }}" class="inline-flex items-center gap-2 rounded-xl border border-ink/15 bg-paper-alt/80 px-5 py-3.5 font-semibold text-ink hover:border-gold/50 hover:text-gold-dark transition-colors">
+                    <a href="{{ route('potensi') }}" class="inline-flex items-center gap-2 rounded-md border border-ink/20 bg-paper-alt px-5 py-3.5 font-semibold text-ink hover:border-gold/60 hover:text-gold-dark transition-colors">
                         Lihat Potensi
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
 
                 <div class="flex flex-wrap gap-3 text-sm text-inktext/70">
-                    <span class="rounded-lg border border-ink/10 bg-paper-alt/70 px-3 py-1.5">Desa Tangguh</span>
-                    <span class="rounded-lg border border-ink/10 bg-paper-alt/70 px-3 py-1.5">Potensi Lokal</span>
-                    <span class="rounded-lg border border-ink/10 bg-paper-alt/70 px-3 py-1.5">Pelayanan Publik</span>
+                    <span class="rounded-md border border-ink/10 bg-paper-alt px-3 py-1.5">Desa Tangguh</span>
+                    <span class="rounded-md border border-ink/10 bg-paper-alt px-3 py-1.5">Potensi Lokal</span>
+                    <span class="rounded-md border border-ink/10 bg-paper-alt px-3 py-1.5">Pelayanan Publik</span>
                 </div>
             </div>
 
             <div class="lg:col-span-5" data-reveal style="transition-delay: 180ms">
                 <div class="relative">
-                    <div class="absolute -left-5 -bottom-5 h-28 w-28 rounded-full bg-gold/20 blur-2xl"></div>
-                    <div class="absolute -right-5 top-10 h-28 w-28 rounded-full bg-sawah/20 blur-2xl"></div>
-
-                    <div class="relative overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper-alt p-3 shadow-[0_30px_80px_-30px_rgba(30,42,32,0.4)]">
-                        <img src="{{ asset('images/pamulihan-1.jpg') }}" alt="{{ $desa['nama_desa'] }}" class="h-[440px] w-full rounded-2xl object-cover">
+                    <div class="relative overflow-hidden rounded-md border border-ink/10 bg-paper-alt p-2 shadow-[0_20px_50px_-24px_rgba(24,45,67,0.35)]">
+                        <img src="{{ asset('images/pamulihan-1.jpg') }}" alt="{{ $desa['nama_desa'] }}" class="h-[440px] w-full rounded-sm object-cover">
                     </div>
 
-                    <div class="absolute -bottom-6 left-4 right-4 rounded-2xl border border-ink/10 bg-paper-alt/95 p-4 shadow-xl backdrop-blur-sm">
+                    <div class="absolute -bottom-6 left-4 right-4 rounded-md border border-ink/10 bg-paper-alt/95 p-4 shadow-lg backdrop-blur-sm">
                         <div class="flex items-center justify-between gap-4">
                             <div>
                                 <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Visi</p>
-                                <p class="font-display text-lg font-semibold text-ink mt-1">{{ $desa['profil']['visi'] }}</p>
+                                <p class="font-display text-lg font-bold text-ink mt-1">{{ $desa['profil']['visi'] }}</p>
                             </div>
-                            <div class="rounded-xl bg-sawah/10 p-3 text-sawah-dark shrink-0">
+                            <div class="rounded-md bg-sawah/10 p-3 text-sawah-dark shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M12 5v14"/></svg>
                             </div>
                         </div>
@@ -67,8 +61,8 @@
 
         <div data-reveal style="transition-delay: 260ms" class="mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
             @foreach ($desa['statistik'] as $stat)
-                <div class="section-shell rounded-2xl border border-ink/10 p-5 shadow-[0_16px_30px_-25px_rgba(30,42,32,0.3)]">
-                    <p class="font-display font-semibold text-3xl lg:text-4xl text-ink counter" data-target="{{ $stat['nilai'] }}">0</p>
+                <div class="section-shell rounded-md border border-ink/10 p-5">
+                    <p class="font-display font-bold text-3xl lg:text-4xl text-ink counter" data-target="{{ $stat['nilai'] }}">0</p>
                     <p class="text-xs font-semibold uppercase tracking-[0.14em] text-sawah-dark mt-2">{{ $stat['satuan'] }}</p>
                     <p class="text-sm text-inktext/70 mt-1">{{ $stat['label'] }}</p>
                 </div>

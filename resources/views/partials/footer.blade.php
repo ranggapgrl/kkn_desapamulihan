@@ -6,7 +6,7 @@
     <div class="relative max-w-7xl mx-auto px-5 lg:px-10 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div class="md:col-span-1">
             <div class="flex items-center gap-3 mb-4">
-                <div class="w-11 h-11 rounded-xl bg-gold/15 border border-gold/30 text-gold flex items-center justify-center font-display font-semibold text-lg shrink-0">
+                <div class="w-11 h-11 rounded-md bg-gold/15 border border-gold/30 text-gold flex items-center justify-center font-display font-bold text-lg shrink-0">
                     {{ strtoupper(substr($desa['nama_desa'], 5, 1)) }}
                 </div>
                 <p class="font-display font-semibold text-white text-lg leading-tight">{{ $desa['nama_desa'] }}</p>

@@ -4,7 +4,6 @@
 
 <section class="relative overflow-hidden pt-32 lg:pt-36 pb-12 lg:pb-16 border-b border-emerald-100/80">
     <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
-    <div class="absolute left-10 top-10 h-40 w-40 rounded-full bg-emerald-200/40 blur-3xl"></div>
     <div data-reveal class="relative max-w-3xl mx-auto px-5 lg:px-10">
         <a href="{{ route('berita') }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-sawah-dark hover:gap-2.5 transition-all mb-5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
