@@ -15,7 +15,7 @@
 @endphp
 
 <section class="relative overflow-hidden pt-36 lg:pt-40 pb-14 lg:pb-20 border-b border-emerald-100/80">
-    <div class="absolute inset-0 text-emerald-900/5 bg-topo pointer-events-none"></div>
+    <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
     <div class="absolute right-8 top-12 h-44 w-44 rounded-full bg-amber-200/50 blur-3xl"></div>
 
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">

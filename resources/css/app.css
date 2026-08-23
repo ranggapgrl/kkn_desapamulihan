@@ -9,21 +9,21 @@ body {
     background:
         radial-gradient(
             circle at top left,
-            rgba(16, 185, 129, 0.12),
-            transparent 24%
+            rgba(38, 76, 62, 0.10),
+            transparent 26%
         ),
         radial-gradient(
             circle at top right,
-            rgba(217, 168, 95, 0.12),
-            transparent 20%
+            rgba(192, 131, 38, 0.10),
+            transparent 22%
         ),
-        linear-gradient(180deg, #f7f3ec 0%, #eef8f4 42%, #f5f7f5 100%);
-    color: #1f2937;
+        linear-gradient(180deg, #f7f2e6 0%, #f2ede0 45%, #f5f0e4 100%);
+    color: #3a352c;
 }
 
 ::selection {
-    background: rgba(16, 185, 129, 0.25);
-    color: #0f172a;
+    background: rgba(192, 131, 38, 0.28);
+    color: #1e2a20;
 }
 
 main {
@@ -39,7 +39,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #0f766e;
+    outline: 2px solid #c08326;
     outline-offset: 2px;
     border-radius: 6px;
 }
@@ -58,21 +58,21 @@ textarea:focus-visible {
 
 /* Base display improvement */
 .section-shell {
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 253, 249, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(15, 118, 110, 0.08);
-    box-shadow: 0 18px 45px -32px rgba(15, 23, 42, 0.25);
+    border: 1px solid rgba(38, 76, 62, 0.1);
+    box-shadow: 0 18px 45px -32px rgba(30, 42, 32, 0.28);
 }
 
 .soft-card {
     background: linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.92),
-        rgba(239, 247, 244, 0.85)
+        rgba(255, 253, 249, 0.94),
+        rgba(238, 241, 233, 0.88)
     );
-    border: 1px solid rgba(15, 118, 110, 0.08);
-    box-shadow: 0 24px 55px -32px rgba(22, 101, 52, 0.28);
+    border: 1px solid rgba(38, 76, 62, 0.1);
+    box-shadow: 0 24px 55px -32px rgba(30, 42, 32, 0.32);
 }
 
 .counter {
@@ -108,9 +108,29 @@ textarea:focus-visible {
     background-size: 22px 22px;
 }
 
+/* Signature motif: garis kontur perbukitan — bukan dekorasi acak, tapi merujuk
+   pada kontur 911 mdpl yang menjadi ciri geografis Desa Pamulihan. */
+.bg-kontur {
+    background-image:
+        repeating-radial-gradient(
+            circle at 15% 20%,
+            transparent 0,
+            transparent 26px,
+            currentColor 27px,
+            currentColor 28px,
+            transparent 29px
+        );
+    background-size: 340px 340px;
+}
+
+.elevation-tag {
+    font-family: '"IBM Plex Mono"', monospace;
+    letter-spacing: 0.08em;
+}
+
 header.is-scrolled {
-    box-shadow: 0 18px 40px -24px rgba(22, 31, 41, 0.28);
-    border-color: rgba(16, 185, 129, 0.14);
+    box-shadow: 0 18px 40px -24px rgba(24, 32, 26, 0.3);
+    border-color: rgba(38, 76, 62, 0.16);
 }
 
 .terrace-divider {
@@ -120,13 +140,13 @@ header.is-scrolled {
         linear-gradient(
                 115deg,
                 transparent 49%,
-                var(--terrace-color, #dfeae1) 49%
+                var(--terrace-color, #e2ddc9) 49%
             )
             0 0/40px 28px repeat-x,
         linear-gradient(
                 65deg,
                 transparent 49%,
-                var(--terrace-color, #dfeae1) 49%
+                var(--terrace-color, #e2ddc9) 49%
             )
             0 0/40px 28px repeat-x;
 }

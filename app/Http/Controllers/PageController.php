@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PesanKontakMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 class PageController extends Controller
 {
     public function beranda()
@@ -49,6 +53,20 @@ class PageController extends Controller
         ]);
     }
 
+    public function beritaDetail(string $slug)
+    {
+        $berita = collect(config('desa.berita'))->firstWhere('slug', $slug);
+
+        abort_if(!$berita, 404);
+
+        return view('berita-detail', [
+            'desa'         => config('desa'),
+            'berita'       => $berita,
+            'aktif'        => 'berita',
+            'judulHalaman' => $berita['judul'],
+        ]);
+    }
+
     public function transparansi()
     {
         return view('transparansi', [
@@ -65,6 +83,31 @@ class PageController extends Controller
             'aktif'      => 'kontak',
             'judulHalaman' => 'Kontak Kami',
         ]);
+    }
+
+    public function kirimPesanKontak(Request $request)
+    {
+        $data = $request->validate([
+            'nama'  => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
+            'pesan' => ['required', 'string', 'max:2000'],
+            // Honeypot anti-spam sederhana: field tersembunyi ini harus selalu kosong.
+            // Bot pengisi form otomatis biasanya mengisi semua input yang ada.
+            'website' => ['prohibited'],
+        ], [
+            'nama.required'  => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email'    => 'Format email tidak valid.',
+            'pesan.required' => 'Pesan tidak boleh kosong.',
+        ]);
+
+        Mail::to(config('desa.kontak.email'))->send(
+            new PesanKontakMail($data['nama'], $data['email'], $data['pesan'])
+        );
+
+        return redirect()
+            ->route('kontak')
+            ->with('status', 'Pesan kamu berhasil dikirim. Terima kasih, tim desa akan segera merespons.');
     }
 
 public function kelompok()

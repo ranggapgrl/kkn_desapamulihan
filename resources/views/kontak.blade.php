@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="relative overflow-hidden pt-32 lg:pt-36 pb-12 lg:pb-16 border-b border-emerald-100/80">
-    <div class="absolute inset-0 text-emerald-900/5 bg-topo pointer-events-none"></div>
+    <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
     <div class="absolute right-8 top-14 h-52 w-52 rounded-full bg-amber-200/50 blur-3xl"></div>
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
         <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-3">Kami Siap Membantu</p>
@@ -67,21 +67,50 @@
         <h2 class="font-display text-2xl font-semibold text-slate-800 mb-1">Kirim Pesan</h2>
         <p class="text-sm text-slate-600 mb-7">Pesan akan dikirim langsung ke email desa.</p>
 
-        <form action="mailto:{{ $desa['kontak']['email'] }}" method="post" enctype="text/plain" class="space-y-5">
+        @if (session('status'))
+            <div class="mb-6 flex items-start gap-3 rounded-xl border border-sawah/30 bg-sawah/10 px-4 py-3.5 text-sm text-ink">
+                <svg class="w-5 h-5 text-sawah-dark shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>{{ session('status') }}</span>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="mb-6 flex items-start gap-3 rounded-xl border border-bata/30 bg-bata/10 px-4 py-3.5 text-sm text-bata-dark">
+                <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+                <div>
+                    <p class="font-semibold mb-1">Pesan belum terkirim:</p>
+                    <ul class="list-disc list-inside space-y-0.5">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
+        <form action="{{ route('kontak.kirim') }}" method="post" class="space-y-5">
+            @csrf
+
+            {{-- Honeypot anti-spam: disembunyikan dari pengguna asli lewat CSS, bot pengisi form otomatis biasanya tetap mengisinya --}}
+            <div class="absolute -left-[9999px]" aria-hidden="true">
+                <label>Jangan isi kolom ini</label>
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
             <div>
                 <label class="block text-sm font-medium text-slate-700 mb-1.5">Nama Lengkap</label>
-                <input type="text" name="nama" required
+                <input type="text" name="nama" required value="{{ old('nama') }}"
                        class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-200">
             </div>
             <div>
                 <label class="block text-sm font-medium text-slate-700 mb-1.5">Email</label>
-                <input type="email" name="email" required
+                <input type="email" name="email" required value="{{ old('email') }}"
                        class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-200">
             </div>
             <div>
                 <label class="block text-sm font-medium text-slate-700 mb-1.5">Pesan</label>
                 <textarea name="pesan" rows="5" required
-                          class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-200"></textarea>
+                          class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-200">{{ old('pesan') }}</textarea>
             </div>
             <button type="submit" class="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-full transition-colors shadow-lg shadow-emerald-200/70">
                 Kirim Pesan

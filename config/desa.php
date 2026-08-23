@@ -34,6 +34,74 @@ return [
         ['label' => 'Luas Wilayah', 'nilai' => 481, 'satuan' => 'Ha', 'ket' => 'Data BPS — sebagian besar lahan pertanian'],
     ],
 
+    // PENTING: seluruh angka di bawah ini (data_umum, demografi, batas_wilayah,
+    // penggunaan_lahan, sarana_prasarana) masih ESTIMASI berdasarkan data terbuka
+    // & pola desa sejenis di Kab. Sumedang — WAJIB dikonfirmasi ke Balai Desa
+    // Pamulihan sebelum website dipakai sebagai rujukan resmi.
+
+    'data_umum' => [
+        'kode_desa_pum'    => '3211102009', // TODO: konfirmasi kode desa PUM resmi ke Balai Desa
+        'tahun_pembentukan'=> '31 Januari 1981',
+        'klasifikasi'      => 'Swadaya',
+        'kategori'         => 'Mula',
+        'tipologi_wilayah' => 'Pesawahan, Perladangan, Perkebunan, Peternakan',
+    ],
+
+    'demografi' => [
+        'luas_wilayah_ha'   => 481,
+        'jumlah_kk'         => 2265,
+        'total_penduduk'    => 6523,
+        'penduduk_lk'       => 3335,
+        'penduduk_pr'       => 3188,
+        'jumlah_dusun'      => 3,
+        'jumlah_rw'         => 9,
+        'jumlah_rt'         => 34,
+        'komoditas_unggulan'=> 'Padi & Sayuran Dataran Tinggi',
+    ],
+
+    'batas_wilayah' => [
+        // TODO: konfirmasi nama desa/kecamatan tetangga yang tepat ke Balai Desa
+        ['arah' => 'Utara',   'desa' => '[Nama Desa Utara]',   'batas_alam' => '—'],
+        ['arah' => 'Selatan', 'desa' => '[Nama Desa Selatan]', 'batas_alam' => '—'],
+        ['arah' => 'Barat',   'desa' => '[Nama Desa Barat]',   'batas_alam' => '—'],
+        ['arah' => 'Timur',   'desa' => '[Nama Desa Timur]',   'batas_alam' => '—'],
+    ],
+
+    'penggunaan_lahan' => [
+        // TODO: konfirmasi rincian luas per jenis lahan ke Balai Desa (total harus = luas_wilayah_ha)
+        ['jenis' => 'Pemukiman / Pekarangan', 'luas_ha' => 0],
+        ['jenis' => 'Lahan Persawahan',       'luas_ha' => 0],
+        ['jenis' => 'Perkebunan Rakyat',      'luas_ha' => 0],
+        ['jenis' => 'Ladang / Tegalan',       'luas_ha' => 0],
+        ['jenis' => 'Tanah Kas Desa',         'luas_ha' => 0],
+    ],
+
+    'sarana_prasarana' => [
+        // TODO: isi jumlah/kondisi sebenarnya dari data Balai Desa
+        ['nama' => 'Kantor Desa',       'detail' => '[Kondisi & tahun bangun]'],
+        ['nama' => 'Poskesdes',         'detail' => '[Jumlah unit]'],
+        ['nama' => 'Posyandu',          'detail' => '[Jumlah unit]'],
+        ['nama' => 'Gedung Sekolah',    'detail' => '[Jumlah SD/SMP/dll]'],
+        ['nama' => 'Masjid & Musala',   'detail' => '[Jumlah masing-masing]'],
+        ['nama' => 'Sarana Air Bersih', 'detail' => '[PAMSIMAS / sumur, jumlah]'],
+        ['nama' => 'Saluran Irigasi',   'detail' => '[Panjang meter terpasang]'],
+    ],
+
+    'geografis' => [
+        'jarak_ke_kecamatan_km' => 3, // TODO: konfirmasi jarak sebenarnya
+        'jarak_ke_kabupaten_km' => 26,
+        'ketinggian_mdpl'       => 911,
+    ],
+
+    'sejarah_milestone' => [
+        // TODO: lengkapi tahun-tahun penting lain jika ada dari catatan Balai Desa
+        ['tahun' => '1980', 'keterangan' => 'SK Gubernur Jawa Barat No. 993/PM.122-Pem/Sk/1980 menetapkan pemekaran wilayah.'],
+        ['tahun' => '1981', 'keterangan' => 'Desa Pamulihan resmi berdiri pada 31 Januari, dengan Desa Cigendel sebagai hasil pemekaran.'],
+        ['tahun' => '1982', 'keterangan' => 'Wilayah eks-Desa Pamulihan yang kini menjadi Desa Cigendel resmi terpisah administratif.'],
+        ['tahun' => '2000', 'keterangan' => 'Kecamatan Pamulihan dibentuk dari sebagian wilayah eks-Kecamatan Rancakalong; nama kecamatan diambil dari nama desa ini.'],
+        ['tahun' => 'Kini', 'keterangan' => 'Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.'],
+    ],
+
     'profil' => [
         'tahun_berdiri' => '31 Januari 1981',
         'kepala_desa'   => 'Ujang Sulaeman, S.Pd.I',
@@ -105,19 +173,25 @@ return [
 
     'berita' => [
         [
+            'slug'     => 'angin-puting-beliung-terjang-dusun-boma-dan-cimasuk',
             'judul'    => 'Angin Puting Beliung Terjang Dusun Boma dan Cimasuk',
             'tanggal'  => '21 Apr 2025',
             'ringkasan'=> 'Angin puting beliung merusak sejumlah rumah warga dan fasilitas sekolah di dua dusun. Pemerintah desa dan warga langsung bergotong royong membersihkan dan memperbaiki kerusakan.',
+            'isi'      => "Bencana angin puting beliung melanda Dusun Boma dan Dusun Cimasuk, Desa Pamulihan, pada 21 April 2025. Sejumlah rumah warga mengalami kerusakan pada bagian atap, dan beberapa fasilitas sekolah turut terdampak.\n\nPemerintah Desa Pamulihan bersama perangkat dusun dan warga segera melakukan pendataan kerusakan serta gotong royong membersihkan puing dan material yang berserakan. Bantuan darurat berupa terpal dan material perbaikan sementara disalurkan kepada keluarga yang rumahnya paling parah terdampak.\n\nKepala Desa mengimbau warga untuk tetap waspada terhadap potensi cuaca ekstrem susulan, terutama menjelang musim pancaroba, dan memastikan jalur evakuasi dusun tetap dalam kondisi siap digunakan.",
         ],
         [
+            'slug'     => 'pelatihan-pengolahan-pakan-ternak-domba-bersama-fapet-unpad',
             'judul'    => 'Pelatihan Pengolahan Pakan Ternak Domba Bersama Fapet Unpad',
             'tanggal'  => '2025',
             'ringkasan'=> 'Fakultas Peternakan Universitas Padjadjaran menggelar pelatihan budidaya dan pengolahan pakan domba bagi peternak, didukung program Dana Desa untuk ketahanan pangan.',
+            'isi'      => "Dalam rangka meningkatkan kapasitas peternak lokal, Fakultas Peternakan Universitas Padjadjaran (Fapet Unpad) menggelar pelatihan pengolahan pakan ternak domba bagi warga Desa Pamulihan. Kegiatan ini merupakan bagian dari program pengabdian masyarakat kampus yang berkolaborasi dengan Pemerintah Desa.\n\nMateri pelatihan mencakup teknik fermentasi pakan, pemanfaatan limbah pertanian sebagai pakan alternatif, serta manajemen kesehatan ternak dasar. Program ini didukung alokasi Dana Desa untuk ketahanan pangan, sejalan dengan potensi peternakan domba yang terus berkembang di wilayah desa.\n\nPara peternak yang mengikuti pelatihan diharapkan dapat menekan biaya pakan sekaligus meningkatkan kualitas dan produktivitas ternak domba mereka.",
         ],
         [
+            'slug'     => 'penyaluran-bantuan-langsung-tunai-dana-desa-blt-dd',
             'judul'    => 'Penyaluran Bantuan Langsung Tunai Dana Desa (BLT-DD)',
             'tanggal'  => 'Rutin Bulanan',
             'ringkasan'=> 'Pemerintah Desa Pamulihan secara rutin menyalurkan BLT-DD kepada keluarga penerima manfaat sebagai bagian dari program perlindungan sosial desa.',
+            'isi'      => "Pemerintah Desa Pamulihan secara rutin menyalurkan Bantuan Langsung Tunai Dana Desa (BLT-DD) kepada keluarga penerima manfaat setiap bulannya. Program ini merupakan bagian dari alokasi Dana Desa yang diarahkan untuk perlindungan sosial dan penanggulangan kemiskinan di tingkat desa.\n\nPenyaluran dilakukan secara langsung di kantor desa dengan melibatkan perangkat dusun untuk memastikan data penerima manfaat akurat dan tepat sasaran. Warga yang merasa berhak namun belum terdaftar dapat mengajukan usulan melalui Kepala Dusun masing-masing untuk diverifikasi dalam musyawarah desa.\n\nTransparansi penyaluran BLT-DD dapat dipantau warga melalui papan informasi di kantor desa maupun laman Transparansi pada website resmi ini.",
         ],
     ],
 

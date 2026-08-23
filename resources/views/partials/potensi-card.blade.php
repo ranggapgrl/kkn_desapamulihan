@@ -29,7 +29,7 @@
                  onerror="this.closest('div').style.display='none'"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <span class="absolute top-3 right-3 inline-flex items-center gap-1 bg-white/90 backdrop-blur-sm text-[11px] font-semibold text-ink px-2.5 py-1 rounded-full shadow-sm">
-                <svg class="w-3 h-3 text-[#25D366]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <svg class="w-3 h-3 text-sawah" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                 Terverifikasi
             </span>
         </div>
@@ -49,7 +49,7 @@
         <div class="mt-5 pt-4 border-t border-ink/10 flex items-center justify-between text-sm font-semibold text-ink group-hover:text-gold-dark transition-colors duration-300">
             @unless ($punyaFoto)
                 <span class="inline-flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-[#25D366]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <svg class="w-3.5 h-3.5 text-sawah" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                     Lihat Detail Verifikasi
                 </span>
             @else

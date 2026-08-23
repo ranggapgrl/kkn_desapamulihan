@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="relative overflow-hidden pt-36 lg:pt-40 pb-14 lg:pb-20 border-b border-emerald-100/80">
-    <div class="absolute inset-0 text-emerald-900/5 bg-topo pointer-events-none"></div>
+    <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
     <div class="absolute right-10 top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-3xl"></div>
 
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
@@ -197,7 +197,7 @@
         </button>
 
         <div class="relative shrink-0 h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-emerald-800 to-slate-900 flex items-center justify-center">
-            <div class="absolute inset-0 opacity-10 bg-topo"></div>
+            <div class="absolute inset-0 opacity-10 bg-kontur"></div>
             <div class="relative z-10 w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-200 ring-4 ring-emerald-200/10">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
