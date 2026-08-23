@@ -3,7 +3,35 @@ html {
 }
 
 body {
-    font-feature-settings: "ss01" on, "cv01" on;
+    font-feature-settings:
+        "ss01" on,
+        "cv01" on;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(16, 185, 129, 0.12),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(217, 168, 95, 0.12),
+            transparent 20%
+        ),
+        linear-gradient(180deg, #f7f3ec 0%, #eef8f4 42%, #f5f7f5 100%);
+    color: #1f2937;
+}
+
+::selection {
+    background: rgba(16, 185, 129, 0.25);
+    color: #0f172a;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
 }
 
 /* Visible keyboard focus everywhere, regardless of Tailwind's default */
@@ -11,9 +39,9 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #D8A13B;
+    outline: 2px solid #0f766e;
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 /* Respect users who've asked for reduced motion */
@@ -28,23 +56,40 @@ textarea:focus-visible {
     }
 }
 
-/* Fallback state for the counters before JS ticks them up */
+/* Base display improvement */
+.section-shell {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(15, 118, 110, 0.08);
+    box-shadow: 0 18px 45px -32px rgba(15, 23, 42, 0.25);
+}
+
+.soft-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92),
+        rgba(239, 247, 244, 0.85)
+    );
+    border: 1px solid rgba(15, 118, 110, 0.08);
+    box-shadow: 0 24px 55px -32px rgba(22, 101, 52, 0.28);
+}
+
 .counter {
     font-variant-numeric: tabular-nums;
 }
 
-/* Scroll-reveal: elements fade + rise into place as they enter the viewport.
-   JS toggles .is-visible; without JS the content still shows (see below). */
 [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-reveal].is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-/* Safety net: if JS fails to load, content must not stay invisible */
 .no-js [data-reveal] {
     opacity: 1;
     transform: none;
@@ -58,13 +103,36 @@ textarea:focus-visible {
     }
 }
 
-/* Subtle topographic dot texture used behind the hero */
 .bg-topo {
     background-image: radial-gradient(currentColor 1px, transparent 1px);
     background-size: 22px 22px;
 }
 
-/* Sticky header gains a soft shadow only once the page has scrolled */
 header.is-scrolled {
-    box-shadow: 0 4px 20px -8px rgba(18, 35, 64, 0.25);
+    box-shadow: 0 18px 40px -24px rgba(22, 31, 41, 0.28);
+    border-color: rgba(16, 185, 129, 0.14);
+}
+
+.terrace-divider {
+    height: 28px;
+    width: 100%;
+    background:
+        linear-gradient(
+                115deg,
+                transparent 49%,
+                var(--terrace-color, #dfeae1) 49%
+            )
+            0 0/40px 28px repeat-x,
+        linear-gradient(
+                65deg,
+                transparent 49%,
+                var(--terrace-color, #dfeae1) 49%
+            )
+            0 0/40px 28px repeat-x;
+}
+
+@media (max-width: 767px) {
+    .section-shell {
+        border-radius: 22px;
+    }
 }

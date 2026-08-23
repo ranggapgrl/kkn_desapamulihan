@@ -9,49 +9,58 @@
     ];
 @endphp
 
-<div class="fixed w-full top-6 z-50 px-4 lg:px-10 xl:px-16">
-    <header class="max-w-[1300px] mx-auto bg-paper/85 backdrop-blur-md border border-ink/10 rounded-full px-5 lg:px-6 py-3 flex items-center justify-between shadow-xl shadow-ink/5">
-        
-        <a href="{{ route('beranda') }}" class="flex items-center gap-3 group shrink-0">
-            <div class="w-10 h-10 rounded-full bg-ink flex items-center justify-center text-gold font-display font-bold text-base shrink-0 transition-transform group-hover:scale-105">
-                {{ strtoupper(substr($desa['nama_desa'], 5, 1)) }}
-            </div>
-            <div class="leading-none hidden sm:block whitespace-nowrap">
-                <p class="font-display font-semibold text-ink text-base">{{ $desa['nama_desa'] }}</p>
-            </div>
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-3 xl:gap-5 font-semibold text-sm">
-            @foreach ($menu as $key => $item)
-                <a href="{{ route($item['route']) }}"
-                   class="relative px-2 py-1 transition-all whitespace-nowrap {{ ($aktif ?? '') === $key ? 'text-ink' : 'text-inktext/60 hover:text-ink' }}">
-                    {{ $item['label'] }}
-                    @if(($aktif ?? '') === $key)
-                        <span class="absolute left-1/2 -bottom-1 w-1/2 h-0.5 bg-gold rounded-full -translate-x-1/2"></span>
-                    @endif
-                </a>
-            @endforeach
-        </nav>
-
-        <div class="flex items-center gap-3 shrink-0">
-            <a href="{{ route('kontak') }}" class="hidden lg:inline-flex items-center bg-gold hover:bg-gold-dark text-ink-dark text-sm font-bold px-6 py-2.5 rounded-full transition-colors shadow-sm whitespace-nowrap">
-                Hubungi Desa
-            </a>
-            <button id="menu-toggle" aria-label="Buka menu" class="lg:hidden text-ink p-1">
-                <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+<div class="fixed w-full top-0 z-50 border-b border-emerald-200/80 bg-[#f7f3ec]/90 backdrop-blur-md text-slate-600 text-xs font-mono hidden sm:block">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-5">
+            <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>{{ $desa['kontak']['telepon'] }}</span>
+            <span>{{ $desa['kontak']['email'] }}</span>
         </div>
-    </header>
+        <span>{{ $desa['kontak']['jam_layanan'] }}</span>
+    </div>
+</div>
 
-    <nav id="mobile-menu" class="hidden lg:hidden max-w-6xl mx-auto mt-3 bg-paper/95 backdrop-blur-md border border-ink/10 rounded-2xl p-4 shadow-lg">
-        <div class="space-y-1">
+<header class="fixed w-full top-7 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-10">
+        <div class="flex items-center justify-between rounded-full border border-emerald-200/70 bg-white/80 px-4 py-2.5 shadow-[0_20px_50px_-24px_rgba(15,36,25,0.4)] backdrop-blur-xl">
+            <a href="{{ route('beranda') }}" class="flex items-center gap-3 shrink-0">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-700 to-emerald-500 text-white flex items-center justify-center text-sm font-display font-bold shadow-md shadow-emerald-200/60">
+                    {{ strtoupper(substr($desa['nama_desa'], 5, 1)) }}
+                </div>
+                <div class="leading-tight hidden sm:block">
+                    <p class="font-display font-bold text-slate-800 text-base tracking-tight">{{ $desa['nama_desa'] }}</p>
+                    <p class="font-mono text-[10px] text-slate-500 uppercase tracking-[0.15em]">{{ $desa['kecamatan'] }}, {{ $desa['kabupaten'] }}</p>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-2 font-semibold text-sm">
+                @foreach ($menu as $key => $item)
+                    <a href="{{ route($item['route']) }}"
+                       class="px-4 py-2 rounded-full transition-all {{ ($aktif ?? '') === $key ? 'bg-emerald-700 text-white shadow-lg shadow-emerald-200/80' : 'text-slate-600 hover:bg-emerald-50 hover:text-emerald-800' }}">
+                        {{ $item['label'] }}
+                    </a>
+                @endforeach
+            </nav>
+
+            <div class="flex items-center gap-3 shrink-0">
+                <a href="{{ route('kontak') }}" class="hidden lg:inline-flex items-center bg-slate-900 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-sm hover:bg-slate-700 transition-colors whitespace-nowrap">
+                    Hubungi Desa
+                </a>
+                <button id="menu-toggle" aria-label="Buka menu" class="lg:hidden text-slate-700 p-2 rounded-full hover:bg-emerald-50 transition-colors">
+                    <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-4">
+        <div class="mx-auto max-w-7xl rounded-2xl border border-emerald-200 bg-white/90 p-3 shadow-lg backdrop-blur-md">
             @foreach ($menu as $key => $item)
                 <a href="{{ route($item['route']) }}"
-                   class="block px-4 py-3 rounded-xl font-medium text-sm {{ ($aktif ?? '') === $key ? 'bg-gold/20 text-ink' : 'text-inktext/80 hover:bg-ink/5' }}">
+                   class="block px-3 py-3 rounded-xl {{ ($aktif ?? '') === $key ? 'text-emerald-800 font-bold bg-emerald-50' : 'text-slate-600' }}">
                     {{ $item['label'] }}
                 </a>
             @endforeach
         </div>
     </nav>
-</div>
+</header>

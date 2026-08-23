@@ -55,115 +55,107 @@
     ];
 @endphp
 
-<section class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24 pt-28 lg:pt-32 min-h-screen">
-    <div data-reveal class="text-center mb-12">
-        <p class="text-sawah font-semibold text-sm tracking-wide uppercase mb-3">Tim Pengabdi</p>
-        <h1 class="font-display text-4xl lg:text-5xl font-bold text-ink">Mahasiswa KKN Pamulihan</h1>
-        <p class="text-inktext/70 mt-4 max-w-2xl mx-auto">
+<section class="relative overflow-hidden pt-36 lg:pt-40 pb-14 lg:pb-20 border-b border-emerald-100/80">
+    <div class="absolute inset-0 text-emerald-900/5 bg-topo pointer-events-none"></div>
+    <div class="absolute right-10 top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-3xl"></div>
+
+    <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
+        <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-3">Tim Pengabdi</p>
+        <h1 class="font-display text-slate-800 text-4xl lg:text-5xl font-bold">Mahasiswa KKN Pamulihan</h1>
+        <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
             Kenali lebih dekat mahasiswa pengabdi yang terbagi dalam 3 kelompok kerja untuk memajukan Desa Pamulihan.
         </p>
     </div>
+</section>
 
-    <!-- TAB BUTTONS (Tombol Slide Kelompok) -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24 min-h-screen">
     <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12" id="tab-buttons">
         @foreach($dataKelompok as $id => $kelompok)
-            <button onclick="switchTab('{{ $id }}')" 
+            <button onclick="switchTab('{{ $id }}')"
                     id="btn-{{ $id }}"
-                    class="tab-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 {{ $loop->first ? 'bg-ink text-gold shadow-lg scale-105' : 'bg-paper-alt text-inktext/70 hover:bg-ink/10' }}">
+                    class="tab-btn px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 {{ $loop->first ? 'bg-emerald-700 text-white shadow-lg shadow-emerald-200/80 scale-105' : 'bg-white text-slate-600 hover:bg-emerald-50 hover:text-emerald-800 border border-emerald-100' }}">
                 {{ $kelompok['nama_kelompok'] }}
             </button>
         @endforeach
     </div>
 
-    <!-- TAB CONTENTS -->
     <div class="relative min-h-[500px]">
         @foreach($dataKelompok as $id => $kelompok)
-            <div id="content-{{ $id }}" 
+            <div id="content-{{ $id }}"
                  class="tab-content transition-all duration-500 {{ $loop->first ? 'opacity-100 translate-y-0 relative z-10' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full pointer-events-none' }}">
-                
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     @foreach($kelompok['anggota'] as $orang)
                         <div onclick="openModal('{{ $orang['nama'] }}', '{{ $orang['nim'] }}', '{{ $orang['jurusan'] }}', '{{ $orang['angkatan'] }}', '{{ $orang['divisi'] }}', '{{ $orang['kontak'] }}', '{{ $orang['foto'] }}')"
-                             class="bg-white border border-ink/5 rounded-3xl overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:shadow-ink/10 transition-all duration-300 group flex flex-col h-full cursor-pointer relative pt-8">
-                            
-                            <!-- Area Foto (Diperbaiki jadi Pas di Tengah dengan object-cover) -->
+                             class="bg-white border border-emerald-100 rounded-[1.75rem] overflow-hidden hover:-translate-y-2 hover:shadow-[0_22px_50px_-35px_rgba(15,118,110,0.3)] transition-all duration-300 group flex flex-col h-full cursor-pointer relative pt-8">
+
                             <div class="flex justify-center mb-4">
-                                <div class="w-32 h-32 relative overflow-hidden rounded-full ring-4 ring-paper-alt shadow-md group-hover:ring-gold/30 transition-all duration-300 bg-paper-alt">
-                                    <img src="{{ asset('images/' . $orang['foto']) }}" 
-                                         alt="Foto {{ $orang['nama'] }}" 
+                                <div class="w-32 h-32 relative overflow-hidden rounded-full ring-4 ring-white shadow-md group-hover:ring-emerald-200 transition-all duration-300 bg-slate-100">
+                                    <img src="{{ asset('images/' . $orang['foto']) }}"
+                                         alt="Foto {{ $orang['nama'] }}"
                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name={{ urlencode($orang['nama']) }}&background=1B3358&color=FBF8F1&size=256&font-family=Poppins';">
+                                         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name={{ urlencode($orang['nama']) }}&background=0f766e&color=F8FAFC&size=256&font-family=Poppins';">
                                 </div>
                             </div>
-                            
-                            <!-- Area Informasi -->
+
                             <div class="px-6 pb-6 text-center flex flex-col flex-grow">
                                 <div class="mb-auto">
-                                    <span class="inline-block px-4 py-1.5 bg-gold/15 text-gold-dark text-xs font-bold rounded-full mb-3">
+                                    <span class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-800 text-xs font-bold rounded-full mb-3">
                                         {{ $orang['divisi'] }}
                                     </span>
-                                    <h4 class="font-display text-lg font-bold text-ink mb-1 line-clamp-1" title="{{ $orang['nama'] }}">
+                                    <h4 class="font-display text-lg font-bold text-slate-800 mb-1 line-clamp-1" title="{{ $orang['nama'] }}">
                                         {{ $orang['nama'] }}
                                     </h4>
-                                    <p class="text-sm font-medium text-inktext/80 line-clamp-1" title="{{ $orang['jurusan'] }}">
+                                    <p class="text-sm font-medium text-slate-600 line-clamp-1" title="{{ $orang['jurusan'] }}">
                                         {{ $orang['jurusan'] }}
                                     </p>
                                 </div>
-                                <p class="text-xs text-inktext/50 mt-4 pt-4 border-t border-ink/5 flex items-center justify-center gap-1 group-hover:text-gold-dark transition-colors">
+                                <p class="text-xs text-slate-500 mt-4 pt-4 border-t border-slate-100 flex items-center justify-center gap-1 group-hover:text-emerald-700 transition-colors">
                                     Lihat Detail
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                                 </p>
                             </div>
-                            
                         </div>
                     @endforeach
                 </div>
-
             </div>
         @endforeach
     </div>
 </section>
 
-<!-- MODAL DETAIL ANGGOTA -->
-<div id="member-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-ink/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-5">
+<div id="member-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-5">
     <div class="absolute inset-0" onclick="closeModal()"></div>
-    
-    <div class="bg-paper relative w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="modal-box">
-        <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white rounded-full text-white hover:text-ink transition-colors z-20">
+
+    <div class="bg-white relative w-full max-w-md rounded-[2rem] shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="modal-box">
+        <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/25 hover:bg-white rounded-full text-slate-800 transition-colors z-20">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <!-- Image Header Modal dengan Background Blur dari Foto Asli -->
         <div class="w-full relative pt-12 pb-8 flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-            
-            <!-- Gambar Background (Blur) -->
             <img id="modal-bg-img" src="" class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-70" alt="">
-            
-            <!-- Lapisan Gradasi (Dark Overlay) agar Teks Tetap Terbaca -->
-            <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/80 to-ink"></div>
-            
-            <!-- Foto Profil Asli (Ditengah) -->
-            <div class="w-32 h-32 relative overflow-hidden rounded-full ring-4 ring-paper shadow-xl mb-5 z-10 bg-paper-alt">
+            <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/70 via-emerald-900/85 to-slate-900"></div>
+
+            <div class="w-32 h-32 relative overflow-hidden rounded-full ring-4 ring-white shadow-xl mb-5 z-10 bg-slate-100">
                 <img id="modal-img" src="" alt="Foto Anggota" class="w-full h-full object-cover">
             </div>
-            
+
             <div class="z-10 relative">
-                <span id="modal-divisi" class="inline-block px-3 py-1 bg-gold text-ink text-xs font-bold rounded-full mb-2"></span>
-                <h3 id="modal-nama" class="font-display text-2xl font-bold text-paper leading-tight"></h3>
+                <span id="modal-divisi" class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full mb-2"></span>
+                <h3 id="modal-nama" class="font-display text-2xl font-bold text-white leading-tight"></h3>
             </div>
         </div>
 
         <div class="p-6 space-y-4">
             <div>
-                <p class="text-xs uppercase tracking-wider text-inktext/50 font-semibold mb-1">Nomor Induk Mahasiswa (NIM)</p>
-                <p id="modal-nim" class="text-ink font-medium"></p>
+                <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Nomor Induk Mahasiswa (NIM)</p>
+                <p id="modal-nim" class="text-slate-800 font-medium"></p>
             </div>
             <div>
-                <p class="text-xs uppercase tracking-wider text-inktext/50 font-semibold mb-1">Program Studi & Angkatan</p>
-                <p id="modal-jurusan" class="text-ink font-medium"></p>
+                <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Program Studi &amp; Angkatan</p>
+                <p id="modal-jurusan" class="text-slate-800 font-medium"></p>
             </div>
-            
-            <div class="pt-4 border-t border-ink/5">
+
+            <div class="pt-4 border-t border-slate-200">
                 <a id="modal-wa" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold px-6 py-3 rounded-xl transition-colors">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.101.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.938 6.938z"/></svg>
                     Hubungi via WhatsApp
@@ -179,8 +171,8 @@
         const contents = document.querySelectorAll('.tab-content');
 
         buttons.forEach(btn => {
-            btn.classList.remove('bg-ink', 'text-gold', 'shadow-lg', 'scale-105');
-            btn.classList.add('bg-paper-alt', 'text-inktext/70', 'hover:bg-ink/10');
+            btn.classList.remove('bg-emerald-700', 'text-white', 'shadow-lg', 'shadow-emerald-200/80', 'scale-105');
+            btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-emerald-100', 'hover:bg-emerald-50', 'hover:text-emerald-800');
         });
 
         contents.forEach(content => {
@@ -189,8 +181,8 @@
         });
 
         const activeBtn = document.getElementById('btn-' + targetId);
-        activeBtn.classList.remove('bg-paper-alt', 'text-inktext/70', 'hover:bg-ink/10');
-        activeBtn.classList.add('bg-ink', 'text-gold', 'shadow-lg', 'scale-105');
+        activeBtn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-emerald-100', 'hover:bg-emerald-50', 'hover:text-emerald-800');
+        activeBtn.classList.add('bg-emerald-700', 'text-white', 'shadow-lg', 'shadow-emerald-200/80', 'scale-105');
 
         const activeContent = document.getElementById('content-' + targetId);
         activeContent.classList.remove('opacity-0', 'translate-y-4', 'absolute', 'pointer-events-none');
@@ -202,24 +194,24 @@
         document.getElementById('modal-divisi').innerText = divisi;
         document.getElementById('modal-jurusan').innerText = jurusan + ' (Angkatan ' + angkatan + ')';
         document.getElementById('modal-nim').innerText = nim;
-        
+
         const img = document.getElementById('modal-img');
-        const bgImg = document.getElementById('modal-bg-img'); // Tambahan untuk merubah gambar background
-        
+        const bgImg = document.getElementById('modal-bg-img');
+
         const fotoUrl = "{{ asset('images/') }}/" + foto;
         img.src = fotoUrl;
-        bgImg.src = fotoUrl; 
-        
+        bgImg.src = fotoUrl;
+
         img.onerror = function() {
-            const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(nama) + '&background=1B3358&color=FBF8F1&size=512&font-family=Poppins';
+            const fallbackUrl = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(nama) + '&background=0f766e&color=F8FAFC&size=512&font-family=Poppins';
             this.src = fallbackUrl;
-            bgImg.src = fallbackUrl; // Fallback untuk background juga
+            bgImg.src = fallbackUrl;
         };
-        
+
         const waBtn = document.getElementById('modal-wa');
-        if(kontak && kontak !== '-') {
+        if (kontak && kontak !== '-') {
             let waNumber = kontak;
-            if(waNumber.startsWith('0')) {
+            if (waNumber.startsWith('0')) {
                 waNumber = '62' + waNumber.substring(1);
             }
             waBtn.href = 'https://wa.me/' + waNumber;
@@ -230,10 +222,10 @@
 
         const modal = document.getElementById('member-modal');
         const modalBox = document.getElementById('modal-box');
-        
+
         modal.classList.remove('opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100');
-        
+
         modalBox.classList.remove('scale-95');
         modalBox.classList.add('scale-100');
     }
@@ -241,10 +233,10 @@
     function closeModal() {
         const modal = document.getElementById('member-modal');
         const modalBox = document.getElementById('modal-box');
-        
+
         modal.classList.remove('opacity-100');
         modal.classList.add('opacity-0', 'pointer-events-none');
-        
+
         modalBox.classList.remove('scale-100');
         modalBox.classList.add('scale-95');
     }
