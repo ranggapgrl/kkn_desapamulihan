@@ -195,24 +195,58 @@ return [
         ],
     ],
 
-    'transparansi' => [
-        'anggaran_total' => 1528184054,
-        'rincian' => [
-            ['nama' => 'Bidang Penyelenggaraan Pemerintahan', 'persentase' => 30],
-            ['nama' => 'Bidang Pembangunan Desa', 'persentase' => 38],
-            ['nama' => 'Bidang Pembinaan Kemasyarakatan', 'persentase' => 14],
-            ['nama' => 'Bidang Pemberdayaan Masyarakat', 'persentase' => 18],
+    'layanan' => [
+        'jam_pelayanan' => [
+            ['hari' => 'Senin – Kamis', 'jam' => '08.00 – 15.00 WIB'],
+            ['hari' => 'Jumat', 'jam' => '08.00 – 11.30 WIB'],
+            ['hari' => 'Sabtu, Minggu & Hari Libur', 'jam' => 'Tutup'],
         ],
-        'dokumen' => [
-            // Ganti '#' dengan link Google Drive file PDF APBDes dari pihak desa
-            ['nama' => 'APBDes Tahun Berjalan', 'link' => '#'], 
-            ['nama' => 'Laporan Realisasi Anggaran', 'link' => '#'],
-            ['nama' => 'RPJM Desa', 'link' => '#'],
+        // TODO: konfirmasi ulang syarat tiap surat ke Balai Desa sebelum dipakai warga.
+        'jenis_surat' => [
+            [
+                'nama'      => 'Surat Keterangan Tidak Mampu (SKTM)',
+                'syarat'    => ['Fotokopi KTP & KK', 'Surat pengantar RT/RW', 'Mengisi formulir permohonan di kantor desa'],
+                'estimasi'  => '1 hari kerja',
+            ],
+            [
+                'nama'      => 'Surat Pengantar KTP/KK',
+                'syarat'    => ['Fotokopi KK lama', 'Fotokopi KTP pemohon (jika ada perubahan data)', 'Surat pengantar RT/RW'],
+                'estimasi'  => '1 hari kerja',
+            ],
+            [
+                'nama'      => 'Surat Keterangan Domisili',
+                'syarat'    => ['Fotokopi KTP & KK', 'Surat pengantar RT/RW'],
+                'estimasi'  => '1 hari kerja',
+            ],
+            [
+                'nama'      => 'Surat Keterangan Usaha (SKU)',
+                'syarat'    => ['Fotokopi KTP', 'Surat pengantar RT/RW', 'Keterangan jenis & lokasi usaha'],
+                'estimasi'  => '1–2 hari kerja',
+            ],
+            [
+                'nama'      => 'Surat Pengantar Nikah (N1–N4)',
+                'syarat'    => ['Fotokopi KTP & KK kedua calon', 'Surat pengantar RT/RW', 'Dokumen pendukung sesuai ketentuan KUA'],
+                'estimasi'  => '1–2 hari kerja',
+            ],
         ],
+        'catatan' => 'Seluruh layanan administrasi di kantor desa tidak dipungut biaya (gratis). Warga yang mengetahui adanya pungutan liar dapat melapor melalui halaman Kontak.',
     ],
 
     // TODO: lengkapi dengan nomor & tautan dokumen resmi dari Balai Desa.
     // 'link' boleh diisi URL Google Drive/PDF; kalau masih '#', tombol otomatis nonaktif di tampilan.
+    // Taruh file foto di: public/images/galeri/<nama-file>
+    // Jika file belum ada, tampilan otomatis fallback ke ikon (tidak error).
+    'galeri' => [
+        ['judul' => 'Gotong Royong Warga', 'kategori' => 'Kegiatan Warga', 'gambar' => 'gotong-royong.jpg'],
+        ['judul' => 'Panen Raya Padi', 'kategori' => 'Pertanian', 'gambar' => 'panen-raya.jpg'],
+        ['judul' => 'Posyandu Balita', 'kategori' => 'Kesehatan', 'gambar' => 'posyandu.jpg'],
+        ['judul' => 'Pelatihan Pakan Ternak', 'kategori' => 'Peternakan', 'gambar' => 'pelatihan-ternak.jpg'],
+        ['judul' => 'Kesenian Calung & Kecapi Suling', 'kategori' => 'Seni & Budaya', 'gambar' => 'kesenian-sunda.jpg'],
+        ['judul' => 'Musyawarah Desa', 'kategori' => 'Pemerintahan', 'gambar' => 'musyawarah-desa.jpg'],
+        ['judul' => 'Penyaluran BLT-DD', 'kategori' => 'Sosial', 'gambar' => 'blt-dd.jpg'],
+        ['judul' => 'Kerja Bakti Irigasi Sawah', 'kategori' => 'Infrastruktur', 'gambar' => 'irigasi.jpg'],
+    ],
+
     'produk_hukum' => [
         [
             'jenis'  => 'Peraturan Desa',

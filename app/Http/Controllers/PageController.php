@@ -67,12 +67,21 @@ class PageController extends Controller
         ]);
     }
 
-    public function transparansi()
+    public function layananPublik()
     {
-        return view('transparansi', [
+        return view('layanan-publik', [
             'desa'       => config('desa'),
-            'aktif'      => 'transparansi',
-            'judulHalaman' => 'Transparansi Anggaran',
+            'aktif'      => 'layanan-publik',
+            'judulHalaman' => 'Layanan Publik',
+        ]);
+    }
+
+    public function galeri()
+    {
+        return view('galeri', [
+            'desa'       => config('desa'),
+            'aktif'      => 'galeri',
+            'judulHalaman' => 'Galeri Desa',
         ]);
     }
 

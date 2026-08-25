@@ -27,8 +27,10 @@
         <div>
             <p class="font-display text-white text-sm tracking-wide mb-4">Informasi</p>
             <ul class="space-y-2.5 text-sm text-paper/70">
-                <li><a href="{{ route('berita') }}" class="hover:text-gold transition-colors">Berita &amp; Galeri</a></li>
-                <li><a href="{{ route('transparansi') }}" class="hover:text-gold transition-colors">Transparansi</a></li>
+                <li><a href="{{ route('berita') }}" class="hover:text-gold transition-colors">Berita Desa</a></li>
+                <li><a href="{{ route('galeri') }}" class="hover:text-gold transition-colors">Galeri</a></li>
+                <li><a href="{{ route('layanan-publik') }}" class="hover:text-gold transition-colors">Layanan Publik</a></li>
+                <li><a href="{{ route('produk-hukum') }}" class="hover:text-gold transition-colors">Produk Hukum</a></li>
                 <li><a href="{{ route('kontak') }}" class="hover:text-gold transition-colors">Kontak Desa</a></li>
             </ul>
         </div>
