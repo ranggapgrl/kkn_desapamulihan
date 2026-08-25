@@ -4,6 +4,7 @@
 
 <section class="relative overflow-hidden pt-36 lg:pt-40 pb-14 lg:pb-20 border-b border-emerald-100/80">
     <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
+    <div class="absolute right-10 top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-3xl"></div>
 
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
         <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-4">Kekayaan Alam &amp; Warga</p>

@@ -76,6 +76,15 @@ class PageController extends Controller
         ]);
     }
 
+    public function produkHukum()
+    {
+        return view('produk-hukum', [
+            'desa'       => config('desa'),
+            'aktif'      => 'produk-hukum',
+            'judulHalaman' => 'Produk Hukum Desa',
+        ]);
+    }
+
     public function kontak()
     {
         return view('kontak', [

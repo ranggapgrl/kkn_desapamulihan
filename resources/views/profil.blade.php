@@ -4,6 +4,7 @@
 
 <section class="relative overflow-hidden pt-36 pb-14 lg:pt-40 lg:pb-20 border-b border-emerald-100/80">
     <div class="absolute inset-0 text-emerald-900/5 bg-kontur pointer-events-none"></div>
+    <div class="absolute right-10 top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-3xl"></div>
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
         <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-4">Profil Desa</p>
         <h1 class="font-display text-slate-800 text-3xl lg:text-5xl font-bold leading-tight">Mengenal {{ $desa['nama_desa'] }}</h1>
@@ -189,7 +190,7 @@
         <p class="font-mono text-[11px] text-emerald-700 tracking-[0.22em] uppercase mb-3">Kelompok KKN</p>
         <h3 class="font-display text-2xl lg:text-4xl font-bold text-slate-800 mb-4">Ingin Mengenal Tim KKN Kami?</h3>
         <p class="text-slate-600 mb-8 max-w-md mx-auto">Lihat daftar mahasiswa pengabdi dari kelompok Pamulihan 1, 2, dan 3.</p>
-        <a href="{{ route('kelompok') }}" class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3.5 rounded-md transition-colors shadow-sm">
+        <a href="{{ route('kelompok') }}" class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-md">
             Lihat Anggota Kelompok
         </a>
     </div>

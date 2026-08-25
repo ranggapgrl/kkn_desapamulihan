@@ -211,4 +211,44 @@ return [
         ],
     ],
 
+    // TODO: lengkapi dengan nomor & tautan dokumen resmi dari Balai Desa.
+    // 'link' boleh diisi URL Google Drive/PDF; kalau masih '#', tombol otomatis nonaktif di tampilan.
+    'produk_hukum' => [
+        [
+            'jenis'  => 'Peraturan Desa',
+            'nomor'  => 'Perdes No. [Nomor] Tahun [Tahun]',
+            'judul'  => 'Anggaran Pendapatan dan Belanja Desa (APBDes)',
+            'tahun'  => '2025',
+            'link'   => '#',
+        ],
+        [
+            'jenis'  => 'Peraturan Desa',
+            'nomor'  => 'Perdes No. [Nomor] Tahun [Tahun]',
+            'judul'  => 'Rencana Pembangunan Jangka Menengah Desa (RPJM Desa)',
+            'tahun'  => '2020',
+            'link'   => '#',
+        ],
+        [
+            'jenis'  => 'Keputusan Kepala Desa',
+            'nomor'  => 'SK No. [Nomor] Tahun [Tahun]',
+            'judul'  => 'Susunan Organisasi dan Tata Kerja Pemerintah Desa',
+            'tahun'  => '2024',
+            'link'   => '#',
+        ],
+        [
+            'jenis'  => 'Keputusan Kepala Desa',
+            'nomor'  => 'SK No. [Nomor] Tahun [Tahun]',
+            'judul'  => 'Penetapan Data Keluarga Penerima Manfaat BLT Dana Desa',
+            'tahun'  => '2025',
+            'link'   => '#',
+        ],
+        [
+            'jenis'  => 'Peraturan Desa',
+            'nomor'  => 'Perdes No. [Nomor] Tahun [Tahun]',
+            'judul'  => 'Rencana Kerja Pemerintah Desa (RKP Desa)',
+            'tahun'  => '2025',
+            'link'   => '#',
+        ],
+    ],
+
 ];

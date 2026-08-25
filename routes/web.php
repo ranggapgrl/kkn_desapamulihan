@@ -10,6 +10,7 @@ Route::get('/potensi', [PageController::class, 'potensi'])->name('potensi');
 Route::get('/berita', [PageController::class, 'berita'])->name('berita');
 Route::get('/berita/{slug}', [PageController::class, 'beritaDetail'])->name('berita.detail');
 Route::get('/transparansi', [PageController::class, 'transparansi'])->name('transparansi');
+Route::get('/produk-hukum', [PageController::class, 'produkHukum'])->name('produk-hukum');
 Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
 Route::post('/kontak', [PageController::class, 'kirimPesanKontak'])->name('kontak.kirim');
 
