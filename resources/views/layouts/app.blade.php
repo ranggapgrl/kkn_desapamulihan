@@ -7,7 +7,7 @@
     <meta name="description" content="{{ $desa['tagline'] }}">
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
 
     {{-- Open Graph & Twitter Card — supaya link situs tampil rapi saat dibagikan ke WhatsApp/Facebook --}}
     <meta property="og:type" content="website">

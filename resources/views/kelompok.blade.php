@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Tim KKN Pamulihan')
 
 @section('content')
 
@@ -14,7 +15,7 @@
                 ['nama' => 'Mutia Zahra', 'nim' => '230104034', 'jurusan' => 'Teknologi Pangan', 'angkatan' => '2023', 'divisi' => 'Divisi PDD', 'kontak' => '088218843817', 'foto' => 'kelompok1/mutia.jpg'],
                 ['nama' => 'Nadia Kusniawati', 'nim' => '230211082', 'jurusan' => 'Administrasi Publik', 'angkatan' => '2023', 'divisi' => 'Sekretaris', 'kontak' => '087736571601', 'foto' => 'kelompok1/nadia.JPG'],
                 ['nama' => 'Nayla Zahara', 'nim' => '230208118', 'jurusan' => 'Ilmu Komunikasi', 'angkatan' => '2023', 'divisi' => 'Divisi Humas', 'kontak' => '083818717870', 'foto' => 'kelompok1/nayla.jpg'],
-                ['nama' => 'Nazhara Dwi Lestari', 'nim' => '230106092', 'jurusan' => 'Farmasi', 'angkatan' => '2023', 'divisi' => 'Bendahara', 'kontak' => '089604168189', 'foto' => 'kelompok1/nazhara.jpg'],
+                ['nama' => 'Nazhara Dwi Lestari', 'nim' => '230106092', 'jurusan' => 'Farmasi', 'angkatan' => '2023', 'divisi' => 'Bendahara', 'kontak' => '089604168189', 'foto' => 'kelompok1/esta.jpg'],
                 ['nama' => 'Ramdhani Muhammad Ibrahim', 'nim' => '230417057', 'jurusan' => 'Komunikasi dan Penyiaran Islam', 'angkatan' => '2023', 'divisi' => 'Divisi PDD', 'kontak' => '089652263847', 'foto' => 'kelompok1/ramdani.JPG'],
                 ['nama' => 'Rangga Pagar Alam', 'nim' => '230102112', 'jurusan' => 'Teknik Informatika', 'angkatan' => '2023', 'divisi' => 'Divisi Logistik', 'kontak' => '0895355237181', 'foto' => 'kelompok1/rangga.JPG'],
                 ['nama' => 'Ujang Kurniawan', 'nim' => '230312096', 'jurusan' => 'Akuntansi', 'angkatan' => '2023', 'divisi' => 'Divisi Acara', 'kontak' => '081282798173', 'foto' => 'kelompok1/ujang.jpg'],
@@ -60,11 +61,30 @@
     <div class="absolute right-10 top-10 h-40 w-40 rounded-full bg-amber-200/50 blur-3xl"></div>
 
     <div data-reveal class="relative max-w-7xl mx-auto px-5 lg:px-10 text-center">
+        {{-- Identitas Kampus --}}
+        <div class="inline-flex items-center gap-2 bg-white border border-emerald-100 text-emerald-700 text-xs font-bold px-4 py-2 rounded-full shadow-sm mb-4">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            KKN Reguler 2026 • Universitas Muhammadiyah Bandung
+        </div>
+
         <p class="text-emerald-700 font-mono text-[11px] tracking-[0.22em] uppercase mb-3">Tim Pengabdi</p>
         <h1 class="font-display text-slate-800 text-4xl lg:text-5xl font-bold">Mahasiswa KKN Pamulihan</h1>
         <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
-            Kenali lebih dekat mahasiswa pengabdi yang terbagi dalam 3 kelompok kerja untuk memajukan Desa Pamulihan.
+            Kenali lebih dekat mahasiswa/i <strong>Universitas Muhammadiyah Bandung (UMB)</strong> yang tergabung dalam
+            program Kuliah Kerja Nyata (KKN) Reguler Tahun 2026, yang terbagi dalam 3 kelompok kerja untuk
+            memajukan Desa Pamulihan, Kecamatan Pamulihan.
         </p>
+
+        {{-- Strip Identitas Kampus --}}
+        <div class="max-w-md mx-auto mt-8 bg-white border border-emerald-100 rounded-2xl px-6 py-4 flex items-center justify-center gap-4 shadow-sm">
+            <img src="{{ asset('images/umblogo.png') }}" alt="Logo Universitas Muhammadiyah Bandung"
+                 class="h-12 w-12 object-contain"
+                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=UMB&background=0f766e&color=F8FAFC&size=128&font-family=Poppins';">
+            <div class="text-left">
+                <div class="font-bold text-slate-800 text-sm">Universitas Muhammadiyah Bandung</div>
+                <div class="text-xs text-slate-500">Lembaga Penelitian &amp; Pengabdian Masyarakat (LPPM) — KKN Reguler 2026</div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -121,6 +141,15 @@
             </div>
         @endforeach
     </div>
+
+    {{-- Footer Identitas Kampus --}}
+    <div class="mt-16 max-w-3xl mx-auto text-center bg-emerald-50/70 border border-emerald-100 rounded-2xl px-6 py-8">
+        <img src="{{ asset('images/umblogo.png') }}" alt="Logo Universitas Muhammadiyah Bandung"
+             class="h-14 w-14 object-contain mx-auto mb-3"
+             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=UMB&background=0f766e&color=F8FAFC&size=128&font-family=Poppins';">
+        <p class="font-bold text-slate-800">Program Kuliah Kerja Nyata (KKN) Reguler Tahun 2026</p>
+        <p class="text-sm text-slate-500 mt-1">Universitas Muhammadiyah Bandung — ditempatkan di Desa Pamulihan, Kecamatan Pamulihan</p>
+    </div>
 </section>
 
 <div id="member-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-5">
@@ -142,6 +171,7 @@
             <div class="z-10 relative">
                 <span id="modal-divisi" class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full mb-2"></span>
                 <h3 id="modal-nama" class="font-display text-2xl font-bold text-white leading-tight"></h3>
+                <p class="text-emerald-200 text-xs mt-1">Universitas Muhammadiyah Bandung • KKN Reguler 2026</p>
             </div>
         </div>
 

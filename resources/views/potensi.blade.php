@@ -99,12 +99,18 @@
         </p>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div class="lg:col-span-5 bg-emerald-50 rounded-[2rem] p-10 flex flex-col items-center justify-center text-center h-full min-h-[300px] border border-emerald-100">
-                <div class="w-20 h-20 bg-emerald-700 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-200/60">
+            <div class="lg:col-span-5 relative overflow-hidden bg-emerald-50 rounded-[2rem] p-10 flex flex-col items-center justify-center text-center h-full min-h-[300px] border border-emerald-100">
+                <img src="{{ asset('images/potensi/ladang.jpg') }}"
+                     alt="Peternakan & Ladang"
+                     class="absolute inset-0 w-full h-full object-cover">
+
+                <div class="absolute inset-0 bg-emerald-50/60"></div>
+
+                <div class="relative z-10 w-20 h-20 bg-emerald-700 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-200/60">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10"></path></svg>
                 </div>
-                <h4 class="font-display text-2xl font-bold text-slate-800 mb-2">Peternakan &amp; Ladang</h4>
-                <p class="text-slate-600 text-sm">Program Ketahanan Pangan Pamulihan</p>
+                <h4 class="relative z-10 font-display text-2xl font-bold text-slate-800 mb-2">Peternakan &amp; Ladang</h4>
+                <p class="relative z-10 text-slate-600 text-sm">Program Ketahanan Pangan Pamulihan</p>
             </div>
 
             <div class="lg:col-span-7 space-y-4">
@@ -149,41 +155,70 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div data-reveal style="transition-delay: 100ms" onclick="openPotensiModal('Seni Tradisi Sunda', 'Seni & Budaya', 'Wayang, calung, tari tradisional, dan kecapi suling masih dilestarikan warga, salah satunya di Sanggar Sundari.')" class="group relative bg-white rounded-3xl p-8 border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors mb-6">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+
+            {{-- Card 1: Seni Tradisi Sunda --}}
+            <div data-reveal style="transition-delay: 100ms"
+                onclick="openPotensiModal('Seni Tradisi Sunda', 'Seni & Budaya', 'Wayang, calung, tari tradisional, dan kecapi suling masih dilestarikan warga, salah satunya di Sanggar Sundari.', '{{ asset('images/potensi/seni-tradisi-sunda.jpg') }}')"
+                class="group relative bg-white rounded-3xl border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full overflow-hidden">
+
+                <div class="h-44 w-full overflow-hidden bg-emerald-50">
+                    <img src="{{ asset('images/potensi/seni-tradisi-sunda.jpg') }}"
+                         alt="Seni Tradisi Sunda"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Pelestarian Lokal</span>
-                <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Seni Tradisi Sunda</h3>
-                <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Wayang, calung, tari tradisional, dan kecapi suling masih dilestarikan warga, salah satunya di Sanggar Sundari.</p>
-                <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
-                    Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+
+                <div class="p-8 flex flex-col flex-grow">
+                    <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Pelestarian Lokal</span>
+                    <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Seni Tradisi Sunda</h3>
+                    <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Wayang, calung, tari tradisional, dan kecapi suling masih dilestarikan warga, salah satunya di Sanggar Sundari.</p>
+                    <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
+                        Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
                 </div>
             </div>
 
-            <div data-reveal style="transition-delay: 200ms" onclick="openPotensiModal('Industri Rumah Tangga', 'UMKM', 'Usaha kecil dan industri rumah tangga warga menjadi penopang ekonomi selain sektor pertanian dan perdagangan.')" class="group relative bg-white rounded-3xl p-8 border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors mb-6">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"></path></svg>
+            {{-- Card 2: Industri Rumah Tangga --}}
+            <div data-reveal style="transition-delay: 200ms"
+                onclick="openPotensiModal('Industri Rumah Tangga', 'UMKM', 'Usaha kecil dan industri rumah tangga warga menjadi penopang ekonomi selain sektor pertanian dan perdagangan.', '{{ asset('images/potensi/industri-rumah-tangga.jpg') }}')"
+                class="group relative bg-white rounded-3xl border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full overflow-hidden">
+
+                <div class="h-44 w-full overflow-hidden bg-emerald-50">
+                    <img src="{{ asset('images/potensi/industri-rumah-tangga.jpg') }}"
+                         alt="Industri Rumah Tangga"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Pemberdayaan Ekonomi</span>
-                <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Industri Rumah Tangga</h3>
-                <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Usaha kecil dan industri rumah tangga warga menjadi penopang ekonomi selain sektor pertanian dan perdagangan.</p>
-                <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
-                    Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+
+                <div class="p-8 flex flex-col flex-grow">
+                    <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Pemberdayaan Ekonomi</span>
+                    <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Industri Rumah Tangga</h3>
+                    <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Usaha kecil dan industri rumah tangga warga menjadi penopang ekonomi selain sektor pertanian dan perdagangan.</p>
+                    <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
+                        Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
                 </div>
             </div>
 
-            <div data-reveal style="transition-delay: 300ms" onclick="openPotensiModal('Jalur Tol Cisumdawu', 'Infrastruktur', 'Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.')" class="group relative bg-white rounded-3xl p-8 border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors mb-6">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            {{-- Card 3: Jalur Tol Cisumdawu --}}
+            <div data-reveal style="transition-delay: 300ms"
+                onclick="openPotensiModal('Jalur Tol Cisumdawu', 'Infrastruktur', 'Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.', '{{ asset('images/potensi/tol-cisumdawu.jpg') }}')"
+                class="group relative bg-white rounded-3xl border border-emerald-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col h-full overflow-hidden">
+
+                <div class="h-44 w-full overflow-hidden bg-emerald-50">
+                    <img src="{{ asset('images/potensi/tol-cisumdawu.jpg') }}"
+                         alt="Jalur Tol Cisumdawu"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Akses Strategis Nasional</span>
-                <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Jalur Tol Cisumdawu</h3>
-                <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.</p>
-                <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
-                    Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+
+                <div class="p-8 flex flex-col flex-grow">
+                    <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mb-2">Akses Strategis Nasional</span>
+                    <h3 class="font-display text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">Jalur Tol Cisumdawu</h3>
+                    <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.</p>
+                    <div class="mt-auto pt-4 border-t border-emerald-100 text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors flex items-center">
+                        Klik untuk detail <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -196,15 +231,12 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <div class="relative shrink-0 h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-emerald-800 to-slate-900 flex items-center justify-center">
-            <div class="absolute inset-0 opacity-10 bg-kontur"></div>
-            <div class="relative z-10 w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-200 ring-4 ring-emerald-200/10">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
+        <div class="relative shrink-0 h-56 lg:h-64 overflow-hidden bg-slate-900">
+            <img id="modal-potensi-gambar" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
 
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-slate-900/10"></div>
 
-            <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-7">
+            <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-7 z-10">
                 <span id="modal-potensi-kategori" class="inline-block px-3 py-1 bg-white/15 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider rounded-full mb-2"></span>
                 <h3 id="modal-potensi-nama" class="font-display text-2xl lg:text-3xl font-bold text-white leading-tight"></h3>
             </div>
@@ -234,10 +266,14 @@
 </div>
 
 <script>
-    function openPotensiModal(nama, kategori, deskripsi) {
+    function openPotensiModal(nama, kategori, deskripsi, gambar) {
         document.getElementById('modal-potensi-nama').innerText = nama;
         document.getElementById('modal-potensi-kategori').innerText = kategori;
         document.getElementById('modal-potensi-deskripsi').innerText = deskripsi;
+
+        const imgEl = document.getElementById('modal-potensi-gambar');
+        imgEl.src = gambar;
+        imgEl.alt = nama;
 
         const modal = document.getElementById('potensi-modal');
         const modalBox = document.getElementById('potensi-modal-box');

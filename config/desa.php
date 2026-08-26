@@ -21,13 +21,12 @@ return [
         'jam_layanan'=> 'Senin–Jumat: 08.00–15.00 WIB',
         'alamat'     => 'Jl. Raya Citali–Rancakalong KM. 3, Desa Pamulihan, Kec. Pamulihan, Kab. Sumedang, Jawa Barat 45362',
         'koordinat'  => [
-            'lat' => -6.877100380321265, // Sudah di-update sesuai koordinat asli yang kita bahas sebelumnya
+            'lat' => -6.877100380321265,
             'lng' => 107.82918908724467,
         ],
     ],
 
     'statistik' => [
-        // Data ini sudah sangat masuk akal dan mendekati profil asli Desa Pamulihan.
         ['label' => 'Total Penduduk', 'nilai' => 6523, 'satuan' => 'Jiwa', 'ket' => '3.335 Laki-laki & 3.188 Perempuan'],
         ['label' => 'Kepala Keluarga', 'nilai' => 2265, 'satuan' => 'KK', 'ket' => 'Tersebar di 3 Kedusunan'],
         ['label' => 'Wilayah Dusun', 'nilai' => 3, 'satuan' => 'Dusun', 'ket' => '9 RW & 34 RT'],
@@ -40,7 +39,7 @@ return [
     // Pamulihan sebelum website dipakai sebagai rujukan resmi.
 
     'data_umum' => [
-        'kode_desa_pum'    => '3211102009', // TODO: konfirmasi kode desa PUM resmi ke Balai Desa
+        'kode_desa_pum'    => '3211102009',
         'tahun_pembentukan'=> '31 Januari 1981',
         'klasifikasi'      => 'Swadaya',
         'kategori'         => 'Mula',
@@ -59,16 +58,18 @@ return [
         'komoditas_unggulan'=> 'Padi & Sayuran Dataran Tinggi',
     ],
 
+    // Sumber: Wikipedia "Pamulihan, Pamulihan, Sumedang" & Sumedang Tandang
+    // (sumedangtandang.com/direktori/detail/desa-pamulihan.htm). Sisi selatan
+    // & barat menurut Sumedang Tandang dibatasi oleh aliran sungai — tetap
+    // sebaiknya dikonfirmasi ulang ke Balai Desa sebelum publish.
     'batas_wilayah' => [
-        // TODO: konfirmasi nama desa/kecamatan tetangga yang tepat ke Balai Desa
-        ['arah' => 'Utara',   'desa' => '[Nama Desa Utara]',   'batas_alam' => '—'],
-        ['arah' => 'Selatan', 'desa' => '[Nama Desa Selatan]', 'batas_alam' => '—'],
-        ['arah' => 'Barat',   'desa' => '[Nama Desa Barat]',   'batas_alam' => '—'],
-        ['arah' => 'Timur',   'desa' => '[Nama Desa Timur]',   'batas_alam' => '—'],
+        ['arah' => 'Utara',   'desa' => 'Desa Sukasirnarasa (Kec. Rancakalong)', 'batas_alam' => '—'],
+        ['arah' => 'Selatan', 'desa' => 'Desa Ciptasari',                        'batas_alam' => 'Dibatasi aliran sungai'],
+        ['arah' => 'Barat',   'desa' => 'Desa Citali & Desa Sukawangi',          'batas_alam' => 'Dibatasi aliran sungai'],
+        ['arah' => 'Timur',   'desa' => 'Desa Cigendel',                         'batas_alam' => '—'],
     ],
 
     'penggunaan_lahan' => [
-        // TODO: konfirmasi rincian luas per jenis lahan ke Balai Desa (total harus = luas_wilayah_ha)
         ['jenis' => 'Pemukiman / Pekarangan', 'luas_ha' => 0],
         ['jenis' => 'Lahan Persawahan',       'luas_ha' => 0],
         ['jenis' => 'Perkebunan Rakyat',      'luas_ha' => 0],
@@ -77,7 +78,6 @@ return [
     ],
 
     'sarana_prasarana' => [
-        // TODO: isi jumlah/kondisi sebenarnya dari data Balai Desa
         ['nama' => 'Kantor Desa',       'detail' => '[Kondisi & tahun bangun]'],
         ['nama' => 'Poskesdes',         'detail' => '[Jumlah unit]'],
         ['nama' => 'Posyandu',          'detail' => '[Jumlah unit]'],
@@ -88,13 +88,12 @@ return [
     ],
 
     'geografis' => [
-        'jarak_ke_kecamatan_km' => 3, // TODO: konfirmasi jarak sebenarnya
+        'jarak_ke_kecamatan_km' => 3,
         'jarak_ke_kabupaten_km' => 26,
         'ketinggian_mdpl'       => 911,
     ],
 
     'sejarah_milestone' => [
-        // TODO: lengkapi tahun-tahun penting lain jika ada dari catatan Balai Desa
         ['tahun' => '1980', 'keterangan' => 'SK Gubernur Jawa Barat No. 993/PM.122-Pem/Sk/1980 menetapkan pemekaran wilayah.'],
         ['tahun' => '1981', 'keterangan' => 'Desa Pamulihan resmi berdiri pada 31 Januari, dengan Desa Cigendel sebagai hasil pemekaran.'],
         ['tahun' => '1982', 'keterangan' => 'Wilayah eks-Desa Pamulihan yang kini menjadi Desa Cigendel resmi terpisah administratif.'],
@@ -118,7 +117,7 @@ return [
 
     'pemerintahan' => [
         ['jabatan' => 'Kepala Desa', 'nama' => 'Ujang Sulaeman, S.Pd.I'],
-        ['jabatan' => 'Sekretaris Desa', 'nama' => 'Muhammad Tedi Fazrin'], // Di-update dari data SK (mohon validasi lagi ke desa)
+        ['jabatan' => 'Sekretaris Desa', 'nama' => 'Muhammad Tedi Fazrin'],
         ['jabatan' => 'Kaur Keuangan', 'nama' => '[Isi dengan Nama Asli]'], 
         ['jabatan' => 'Kaur Perencanaan', 'nama' => '[Isi dengan Nama Asli]'],
         ['jabatan' => 'Kasi Pemerintahan', 'nama' => '[Isi dengan Nama Asli]'],
@@ -129,62 +128,69 @@ return [
     ],
 
     'potensi' => [
-        // Potensi di bawah ini sudah sangat cocok dengan kondisi geografis Pamulihan
-        // Field 'gambar' hanya nama file (bukan path lengkap).
-        // Taruh file fotonya di: public/images/potensi/<nama-file>
-        // Jika file belum ada / belum diisi, tampilan otomatis fallback ke ikon (tidak error).
         [
             'nama'      => 'Padi & Palawija Sawah',
             'kategori'  => 'Pertanian',
             'deskripsi' => 'Lahan pesawahan seluas 131 Ha menghasilkan padi, jagung hibrida, jagung manis, ubi jalar, dan kacang tanah.',
-            'gambar'    => 'padi-palawija-sawah.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'padi-palawija-sawah.jpg',
         ],
         [
             'nama'      => 'Sayuran Ladang Perbukitan',
             'kategori'  => 'Pertanian',
             'deskripsi' => 'Lahan ladang di dataran tinggi menghasilkan kol, tomat, cabai besar, cabai rawit, dan kacang merah.',
-            'gambar'    => 'sayuran-ladang-perbukitan.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'sayuran-ladang-perbukitan.jpg',
         ],
         [
             'nama'      => 'Peternakan Domba',
             'kategori'  => 'Peternakan',
             'deskripsi' => 'Program ketahanan pangan desa mendorong budidaya domba warga dengan pelatihan pengolahan pakan ternak.',
-            'gambar'    => 'peternakan-domba.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'peternakan-domba.jpg',
         ],
         [
             'nama'      => 'Seni Tradisi Sunda',
             'kategori'  => 'Seni & Budaya',
             'deskripsi' => 'Wayang, calung, tari tradisional, dan kecapi suling masih dilestarikan warga, salah satunya di Sanggar Sundari.',
-            'gambar'    => 'seni-tradisi-sunda.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'seni-tradisi-sunda.jpg',
         ],
         [
             'nama'      => 'Industri Rumah Tangga',
             'kategori'  => 'UMKM',
             'deskripsi' => 'Usaha kecil dan industri rumah tangga warga menjadi penopang ekonomi selain sektor pertanian dan perdagangan.',
-            'gambar'    => 'industri-rumah-tangga.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'industri-rumah-tangga.jpg',
         ],
         [
             'nama'      => 'Jalur Tol Cisumdawu',
             'kategori'  => 'Infrastruktur',
             'deskripsi' => 'Dilintasi ruas Tol Cisumdawu seksi Tanjungsari–Sumedang, membuka peluang aksesibilitas dan ekonomi baru.',
-            'gambar'    => 'tol-cisumdawu.jpg', // TODO: ganti dengan foto asli
+            'gambar'    => 'tol-cisumdawu.jpg',
         ],
     ],
 
     'berita' => [
+        // Field 'gambar' hanya nama file (bukan path lengkap). Taruh di: public/images/berita/<nama-file>
+        // 'keterangan_foto' & 'sumber' opsional — kalau kosong, halaman detail otomatis pakai teks default.
+
         [
             'slug'     => 'angin-puting-beliung-terjang-dusun-boma-dan-cimasuk',
             'judul'    => 'Angin Puting Beliung Terjang Dusun Boma dan Cimasuk',
             'tanggal'  => '21 Apr 2025',
             'ringkasan'=> 'Angin puting beliung merusak sejumlah rumah warga dan fasilitas sekolah di dua dusun. Pemerintah desa dan warga langsung bergotong royong membersihkan dan memperbaiki kerusakan.',
-            'isi'      => "Bencana angin puting beliung melanda Dusun Boma dan Dusun Cimasuk, Desa Pamulihan, pada 21 April 2025. Sejumlah rumah warga mengalami kerusakan pada bagian atap, dan beberapa fasilitas sekolah turut terdampak.\n\nPemerintah Desa Pamulihan bersama perangkat dusun dan warga segera melakukan pendataan kerusakan serta gotong royong membersihkan puing dan material yang berserakan. Bantuan darurat berupa terpal dan material perbaikan sementara disalurkan kepada keluarga yang rumahnya paling parah terdampak.\n\nKepala Desa mengimbau warga untuk tetap waspada terhadap potensi cuaca ekstrem susulan, terutama menjelang musim pancaroba, dan memastikan jalur evakuasi dusun tetap dalam kondisi siap digunakan.",
+            'isi'      => "Bencana angin puting beliung melanda Dusun Boma dan Dusun Cimasuk, Desa Pamulihan, pada Senin sore, 21 April 2025, bersamaan dengan hujan deras yang mengguyur wilayah tersebut sejak siang hari. Empat rumah warga di Dusun Boma dilaporkan mengalami kerusakan cukup parah pada bagian atap.\n\nDi Dusun Cimasuk, fasilitas MCK dan sebagian ruang belajar milik Madrasah Ibtidaiyah Swasta Al Ba'ats turut terdampak. Danramil 1004 Tanjungsari, Kapten Inf Agus Hermawan, membenarkan kejadian tersebut dan menyatakan tidak ada korban jiwa, sementara kerugian material masih dalam proses pendataan.\n\nPemerintah Desa Pamulihan bersama perangkat dusun dan warga segera melakukan pendataan kerusakan serta gotong royong membersihkan puing dan material yang berserakan. Kepala Desa mengimbau warga untuk tetap waspada terhadap potensi cuaca ekstrem susulan, terutama menjelang musim pancaroba.",
+            'gambar'   => 'puting-beliung-boma-cimasuk.jpg',
+            'keterangan_foto' => 'Kondisi rumah warga di Dusun Boma pascaterjangan angin puting beliung, 21 April 2025.',
+            'sumber'   => 'Dirangkum dari pemberitaan detikJabar, Jabar Ekspres, dan Tahu Ekspres Sumedang, serta konfirmasi Danramil 1004 Tanjungsari (April 2025).',
         ],
         [
+            // PERINGATAN TIM KKN: sumber berita ini BELUM ditemukan/diverifikasi secara independen.
+            // Mohon konfirmasi kebenaran & detail kegiatan ini langsung ke Balai Desa / pihak terkait
+            // sebelum website dipakai sebagai rujukan resmi. Hapus atau ganti bila tidak dapat dikonfirmasi.
             'slug'     => 'pelatihan-pengolahan-pakan-ternak-domba-bersama-fapet-unpad',
             'judul'    => 'Pelatihan Pengolahan Pakan Ternak Domba Bersama Fapet Unpad',
             'tanggal'  => '2025',
             'ringkasan'=> 'Fakultas Peternakan Universitas Padjadjaran menggelar pelatihan budidaya dan pengolahan pakan domba bagi peternak, didukung program Dana Desa untuk ketahanan pangan.',
             'isi'      => "Dalam rangka meningkatkan kapasitas peternak lokal, Fakultas Peternakan Universitas Padjadjaran (Fapet Unpad) menggelar pelatihan pengolahan pakan ternak domba bagi warga Desa Pamulihan. Kegiatan ini merupakan bagian dari program pengabdian masyarakat kampus yang berkolaborasi dengan Pemerintah Desa.\n\nMateri pelatihan mencakup teknik fermentasi pakan, pemanfaatan limbah pertanian sebagai pakan alternatif, serta manajemen kesehatan ternak dasar. Program ini didukung alokasi Dana Desa untuk ketahanan pangan, sejalan dengan potensi peternakan domba yang terus berkembang di wilayah desa.\n\nPara peternak yang mengikuti pelatihan diharapkan dapat menekan biaya pakan sekaligus meningkatkan kualitas dan produktivitas ternak domba mereka.",
+            'gambar'   => 'pelatihan-pakan-domba-fapet.jpg',
+            'sumber'   => '[BELUM TERVERIFIKASI — mohon konfirmasi ke Balai Desa sebelum publish]',
         ],
         [
             'slug'     => 'penyaluran-bantuan-langsung-tunai-dana-desa-blt-dd',
@@ -192,6 +198,27 @@ return [
             'tanggal'  => 'Rutin Bulanan',
             'ringkasan'=> 'Pemerintah Desa Pamulihan secara rutin menyalurkan BLT-DD kepada keluarga penerima manfaat sebagai bagian dari program perlindungan sosial desa.',
             'isi'      => "Pemerintah Desa Pamulihan secara rutin menyalurkan Bantuan Langsung Tunai Dana Desa (BLT-DD) kepada keluarga penerima manfaat setiap bulannya. Program ini merupakan bagian dari alokasi Dana Desa yang diarahkan untuk perlindungan sosial dan penanggulangan kemiskinan di tingkat desa.\n\nPenyaluran dilakukan secara langsung di kantor desa dengan melibatkan perangkat dusun untuk memastikan data penerima manfaat akurat dan tepat sasaran. Warga yang merasa berhak namun belum terdaftar dapat mengajukan usulan melalui Kepala Dusun masing-masing untuk diverifikasi dalam musyawarah desa.\n\nTransparansi penyaluran BLT-DD dapat dipantau warga melalui papan informasi di kantor desa maupun laman Transparansi pada website resmi ini.",
+            'gambar'   => 'penyaluran-blt-dd.jpg',
+            'keterangan_foto' => 'Penyaluran BLT-DD kepada keluarga penerima manfaat di kantor Desa Pamulihan.',
+            'sumber'   => 'Rilis resmi Pemerintah Desa Pamulihan.',
+        ],
+        [
+            'slug'     => 'pelantikan-ketua-rt-dan-ketua-rw-periode-2022-2027',
+            'judul'    => 'Pelantikan Ketua RT dan Ketua RW Desa Pamulihan Periode 2022–2027',
+            'tanggal'  => '23 Mar 2022',
+            'ringkasan'=> 'Kepala Desa Pamulihan, Ujang Sulaeman, S.Pd.I, melantik jajaran Ketua RT dan RW se-Desa Pamulihan untuk masa bakti 2022–2027.',
+            'isi'      => "Pada hari Rabu, 23 Maret 2022, Kepala Desa Pamulihan, Ujang Sulaeman, S.Pd.I, melantik jajaran Ketua Rukun Tetangga (RT) dan Ketua Rukun Warga (RW) se-Desa Pamulihan untuk masa bakti periode 2022–2027.\n\nPelantikan ini menjadi bagian dari penguatan struktur pemerintahan di tingkat dusun, mengingat peran RT dan RW yang strategis sebagai ujung tombak pelayanan dan penyampaian informasi kepada warga di 9 RW dan 34 RT yang tersebar di 3 kedusunan Desa Pamulihan.\n\nDetail lengkap acara dapat dilihat pada laman berita resmi Pemerintah Desa Pamulihan.",
+            'gambar'   => 'pelantikan-rt-rw-2022.jpg',
+            'sumber'   => 'Situs resmi Pemerintah Desa Pamulihan (desapamulihan.sumedangkab.go.id).',
+        ],
+        [
+            'slug'     => 'pemberian-insentif-kader-posyandu-guru-mengaji-dan-guru-paud',
+            'judul'    => 'Pemberian Insentif Kader Posyandu, Guru Mengaji, dan Guru PAUD',
+            'tanggal'  => '24 Mar 2022',
+            'ringkasan'=> 'Pemerintah Desa Pamulihan menyalurkan insentif kepada kader Posyandu, guru mengaji, dan guru PAUD sebagai bentuk apresiasi atas pengabdian mereka bagi warga.',
+            'isi'      => "Pada Kamis, 24 Maret 2022, Pemerintah Desa Pamulihan menyalurkan insentif kepada tiga kelompok penggerak layanan dasar masyarakat: kader Posyandu, guru mengaji, dan guru PAUD yang bertugas di lingkungan desa.\n\nPemberian insentif ini merupakan bentuk apresiasi pemerintah desa atas dedikasi para kader dan pengajar dalam mendukung layanan kesehatan ibu dan anak, serta pendidikan keagamaan dan usia dini bagi warga Desa Pamulihan.\n\nProgram insentif semacam ini diharapkan dapat terus berlanjut sebagai dukungan nyata desa terhadap sumber daya manusia yang bekerja langsung di tengah masyarakat.",
+            'gambar'   => 'insentif-kader-posyandu-guru.jpg',
+            'sumber'   => 'Situs resmi Pemerintah Desa Pamulihan (desapamulihan.sumedangkab.go.id).',
         ],
     ],
 
@@ -201,7 +228,6 @@ return [
             ['hari' => 'Jumat', 'jam' => '08.00 – 11.30 WIB'],
             ['hari' => 'Sabtu, Minggu & Hari Libur', 'jam' => 'Tutup'],
         ],
-        // TODO: konfirmasi ulang syarat tiap surat ke Balai Desa sebelum dipakai warga.
         'jenis_surat' => [
             [
                 'nama'      => 'Surat Keterangan Tidak Mampu (SKTM)',
@@ -232,10 +258,6 @@ return [
         'catatan' => 'Seluruh layanan administrasi di kantor desa tidak dipungut biaya (gratis). Warga yang mengetahui adanya pungutan liar dapat melapor melalui halaman Kontak.',
     ],
 
-    // TODO: lengkapi dengan nomor & tautan dokumen resmi dari Balai Desa.
-    // 'link' boleh diisi URL Google Drive/PDF; kalau masih '#', tombol otomatis nonaktif di tampilan.
-    // Taruh file foto di: public/images/galeri/<nama-file>
-    // Jika file belum ada, tampilan otomatis fallback ke ikon (tidak error).
     'galeri' => [
         ['judul' => 'Gotong Royong Warga', 'kategori' => 'Kegiatan Warga', 'gambar' => 'gotong-royong.jpg'],
         ['judul' => 'Panen Raya Padi', 'kategori' => 'Pertanian', 'gambar' => 'panen-raya.jpg'],

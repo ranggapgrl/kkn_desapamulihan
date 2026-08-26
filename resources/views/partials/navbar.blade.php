@@ -2,12 +2,10 @@
     $menu = [
         'beranda'       => ['label' => 'Beranda', 'route' => 'beranda'],
         'profil'        => ['label' => 'Profil', 'route' => 'profil'],
-        'pemerintahan'  => ['label' => 'Pemerintahan', 'route' => 'pemerintahan'],
         'potensi'       => ['label' => 'Potensi', 'route' => 'potensi'],
         'berita'        => ['label' => 'Berita', 'route' => 'berita'],
         'galeri'        => ['label' => 'Galeri', 'route' => 'galeri'],
         'layanan-publik'=> ['label' => 'Layanan Publik', 'route' => 'layanan-publik'],
-        'produk-hukum'  => ['label' => 'Produk Hukum', 'route' => 'produk-hukum'],
     ];
 @endphp
 

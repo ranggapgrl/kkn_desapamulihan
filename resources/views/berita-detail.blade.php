@@ -15,9 +15,42 @@
     </div>
 </section>
 
+@php
+    $gambarUrl = !empty($berita['gambar']) ? asset('images/berita/' . $berita['gambar']) : '';
+@endphp
+
+@if ($gambarUrl)
+    <section class="max-w-3xl mx-auto px-5 lg:px-10 -mt-4 lg:-mt-6" data-reveal>
+        <div class="rounded-2xl overflow-hidden border border-ink/10 shadow-lg shadow-ink/5">
+            <img src="{{ $gambarUrl }}"
+                 alt="{{ $berita['judul'] }}"
+                 loading="lazy"
+                 onerror="this.closest('section').style.display='none'"
+                 class="w-full h-56 sm:h-72 lg:h-96 object-cover">
+        </div>
+        @if (!empty($berita['keterangan_foto']))
+            <p class="text-xs text-inktext/50 italic mt-2.5 px-1">{{ $berita['keterangan_foto'] }}</p>
+        @endif
+    </section>
+@endif
+
 <section class="max-w-3xl mx-auto px-5 lg:px-10 py-16 lg:py-20" data-reveal>
+
+    <div class="bg-paper-alt border border-ink/10 rounded-2xl p-5 mb-10 flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#25D366]/15 flex items-center justify-center text-[#25D366] shrink-0 mt-0.5">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        </div>
+        <div>
+            <p class="text-xs font-bold text-ink uppercase tracking-wider mb-1">Informasi Terverifikasi</p>
+            <p class="text-sm text-inktext/75 leading-relaxed">{{ $berita['sumber'] ?? 'Dipublikasikan resmi oleh Pemerintah Desa Pamulihan berdasarkan data dan kejadian faktual di lapangan.' }}</p>
+        </div>
+    </div>
+
     <div class="prose prose-slate max-w-none">
-        @foreach (explode("\n\n", $berita['isi']) as $paragraf)
+        @php
+            $isiArtikel = !empty($berita['isi']) ? $berita['isi'] : ($berita['ringkasan'] ?? '');
+        @endphp
+        @foreach (explode("\n\n", $isiArtikel) as $paragraf)
             <p class="text-base leading-relaxed text-slate-700 mb-5">{{ $paragraf }}</p>
         @endforeach
     </div>
